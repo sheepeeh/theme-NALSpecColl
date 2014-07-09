@@ -167,7 +167,7 @@
     width: 100%;
   }
   .show .item-file .download-file {
-    display: block;
+    display: inline-block;
   }
   .show .item-file img {
     vertical-align: bottom;
@@ -348,7 +348,8 @@
     text-align: center;
     margin: 0;
     padding-top: 0.75em;
-    }
+    padding-bottom: 0.75em;
+  }
 
   #search-container {
     padding: 0 16px 1.5em;
@@ -400,7 +401,7 @@
     left: 90%;
     font-weight: bold;
     line-height: 30px;
-    background-color: rgb(51,51,103);
+    background-color: #4b6569;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -530,30 +531,18 @@
     border-bottom: 0;
   }
   #content .element-set div {
-    padding-bottom: 0;
+    padding-bottom: 0.75em;
     margin-bottom: 0;
   }
   #content .element-set div:only-of-type, #content .element-set div:last-of-type {
     border-bottom: 0;
-    padding-bottom: 0;
+    padding-bottom: 0.375em;
   }
   #content .item-meta {
     padding-bottom: 0;
   }
-
-  #content .item-meta  h2 {
-    margin-left:16%;
-  }
-  #content .item-meta .item-description,
-  #content .item-meta .item-creator,
-  #content .item-meta .item-date {
+  #content .item-meta .item-description {
     padding-top: 0;
-    padding-left:16%;
-
-  }
-  #content .item-meta .item-creator,
-  #content .item-meta .item-date {
-   line-height:100%;
   }
   #content .item-meta .item-img {
     max-width: 100%;
@@ -574,9 +563,6 @@
     margin: 0;
     vertical-align: bottom;
   }
-
-
-
   #content #search-filters, #content #item-filters {
     background-color: transparent;
     border-top: 0;
@@ -708,8 +694,8 @@
   }
   #home #content div h3 {
     margin-top: 0;
-    font-weight: 400;
-    font-variant: small-caps;
+    font-weight: 300;
+    text-transform: uppercase;
   }
   #home #content div img {
     margin: 0 0 0.75em;
@@ -772,7 +758,7 @@
   }
 
   .items.show h3 {
-    margin-bottom: 0px;
+    margin-bottom: 0.75em;
   }
   .items.show #itemfiles #item-images > div {
     width: 22.5%;
@@ -834,18 +820,6 @@
   #content #outputs p {
     padding-left: 0;
   }
-
-.centered-image    {
-    text-align:center;
-    margin-top:0px;
-    margin-bottom:0px;
-    padding:0px;
- }
-
- .items.show #previous-page {
- 	border-style:none;
- 	text-align:right;
- }
 
   /* !---------- Search ---------- */
   .search #search-results {
@@ -1134,19 +1108,9 @@
     background-color: transparent;
   }
 
-  .exhibits .subseries {
-  	margin-left:5%;
-  }
-
-  .exhibits .address {
-  	margin-left:10%;
-  	margin-bottom:1em;
-  	text-align:left;
-  }
-
   #content .exhibit-items,
   #content .gallery {
-    padding-bottom: 5%;
+    padding-bottom: 0;
   }
 
   .summary #exhibit-pages {
@@ -1193,67 +1157,6 @@
     margin-top: 1.5em;
   }
 
-  .layout-file-text .exhibit-items {
-    max-width: 30%;
-}
-
-  .exhibit-block:first-of-type {
-       margin-top:1em !important;
-   }
-
-   .layout-nal-titlebar .exhibit-item {
-		background-color:#abbacf;
-   }
-
-   .layout-nal-imggal .break-row {
-   	border-bottom:5px solid;
-   	border-color: rgb(171,186,207) !important; 
-   	clear:both; 
-   	width:95%;
-   	text-align:center; 
-   	display:inline-block;
-   	margin: 1.5em 0;  	
-   }
-
-.layout-text .quote-attrib {
-    text-align:right;
-    font-weight:600;
-    font-size:10pt;
-    margin-top:0px;
-    max-width:28%;
-    float:right;
-    clear:both;
-  }
-
-.layout-text .quote-attrib:before {
-  content:"\2014";
-  }
-
-.layout-text .typescript-quote {
-  margin-bottom: 0;
-  padding-bottom:0;
-  text-align: justify;
-  text-indent: -1.5em;
-  margin-left: 1em;
-  clear:both;
-}
-
-.layout-text .typescript-quote:before {
-  content:"\201C";
-  font-family:Georgia, serif;
-  font-size:1.5em;
-  padding:5px;
-
-}
-
-.layout-text .typescript-quote:after {
-  content:"\201D";
-  font-family:Georgia, serif;
-  font-size:1.5em;
-  padding:5px;
-
-}
-
   /* !---------- Simple Pages ---------- */
   .simple-pages-navigation {
     list-style: none;
@@ -1282,78 +1185,44 @@
 
   /* !---------- Winter Styles ---------- */
   .winter body {
-    background-color: rgb(51,51,103);
+    background-color: #2f3e4a;
     color: #5a5a5a;
   }
   .winter h1, .winter #site-title a {
-    color: #009;
+    color: #859ca2;
   }
   .winter input[type=submit], .winter button, .winter .button, .winter #advanced-search {
-    background-color: rgb(51,51,103);
+    background-color: #4b6569;
   }
   .winter input[type=text], .winter input[type=password], .winter textarea {
-    background-color: #FFF;
-	
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25) inset;
+    background-color: #dfe2e2;
   }
-
- .winter header > #search-container p {
- 	font-size: 1.15em;
- 	font-weight:600;
- 	padding-top: 10px;
-	float: right;
- 	clear:both;
- }
-
-.winter header > #search-container input[id=query] {
-	border: 1px solid #909090;
-}
-
-.winter #content #search-narrow-by-fields select {
-	width: 45%;
-	margin-right:2%;
-}
-
-.winter .browse .disclaimer, .advanced-search .disclaimer {
-    font-style: italic;
-    font-size: 80%;
-    margin-top: -15px;
-}
-
   .winter a:link {
-    color: rgb(0,0,153)
+    color: #56acba;
   }
   .winter a:visited {
-    color: rgb(107,123,173);
+    color: #98c4c9;
   }
   .winter a:hover, .winter a:active {
-    color: rgb(0, 93, 255);
+    color: #3acacc;
   }
   .winter header {
-    background: #fff url('../images/sc_banner.png') no-repeat right top;
+    background-color: #fff;
   }
-
   .winter nav.top {
-    background-color: rgb(107,123,173);
+    background-color: #56acba;
   }
   .winter nav.top li:hover a {
     color: #fff;
   }
-
-   .winter nav.top ul li.active > a  {
-    color: #fff;
-  }
-
- .winter nav.top a:active {
-    color: #fff;
-  }
-
   .winter nav.top a:link, .winter nav.top a:visited {
     color: #def9ff;
   }
-
+  .winter nav.top a:active, .winter nav.top a:hover {
+    color: #fff;
+  }
   .winter nav.top ul li ul {
-    background-color: rgb(107,123,173);
+    background-color: #56acba;
   }
   .winter nav.top ul li ul li > a:link, .winter nav.top ul li ul li > a:visited, .winter nav.top ul li ul li > a:active, .winter nav.top ul li ul li > a:hover {
     color: #fff;
@@ -1367,10 +1236,10 @@
   .winter .secondary-nav .current a,
   .winter .secondary-nav a.current,
   .winter .exhibit-section-nav .current a {
-    background-color: rgb(171,186,207);
+    background-color: #98c4c9;
   }
   .winter #home #content > div {
-    border-color: rgb(51,51,103);
+    border-color: #4b6569;
   }
   .winter #content h1 {
     color: #fff;
@@ -1379,17 +1248,17 @@
     border-color: #dfe2e2;
   }
   .winter #content div {
-    border-color: rgb(107,123,173);
+    border-color: #859ca2;
   }
   .winter #content > div, .winter #content #primary > div, .winter #content #sidebar > div,
   .winter #content #advanced-search-form > div, .winter #content #exhibit-pages {
-    border-color: rgb(51,51,103);
+    border-color: #4b6569;
   }
   .winter #content #primary > div, .winter #content #sidebar > div {
     background-color: #fff;
   }
   .winter #content .pagination_previous a, .winter #content .pagination_next a {
-    background-color: rgb(107,123,173);
+    background-color: #56acba;
   }
   .winter #content .pagination a:link, .winter #content .pagination a:visited {
     color: #def9ff;
@@ -1398,12 +1267,10 @@
     color: #fff;
   }
   .winter #content .pagination input[type=text] {
-    background-color:#fff;
-	border-color: rgba(156, 156, 156, 1);
-	box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.15);
+    border-color: #dfe2e2;
   }
   .winter #content nav .pagination_list {
-    background-color: rgb(107,123,173);
+    background-color: #56acba;
   }
   .winter #content .items-nav a:link, .winter #content .items-nav a:visited, .winter #content .secondary-nav a:link, .winter #content .secondary-nav a:visited, .winter #content #secondary-nav a:link, .winter #content #secondary-nav a:visited, .winter #content #outputs a:link, .winter #content #outputs a:visited, .winter #content #exhibit-child-pages a:link, .winter #content #exhibit-child-pages a:visited {
     color: #def9ff;
@@ -1421,38 +1288,26 @@
     -moz-box-shadow: transparent 0 0 0;
     box-shadow: transparent 0 0 0;
   }
-
-  .winter #content #sidebar #previous-page {
-  	border: 0;
-  	background-color: transparent;
-    -webkit-box-shadow: transparent 0 0 0;
-    -moz-box-shadow: transparent 0 0 0;
-    box-shadow: transparent 0 0 0;
-  }
- .winter #content #sidebar #previous-page a {
- 	color:rgb(0,0,170);
-  }
   .winter #search-results th {
-    background-color: rgb(51,51,103);
+    background-color: #4b6569;
   }
   .winter #search-filters li, .winter #item-filters li {
     background-color: #def9ff;
   }
   .winter .page #content {
-    border-color: rgb(51,51,103);
+    border-color: #4b6569;
   }
   .winter footer {
-    background-color: rgb(51,51,103);
-    margin-top:0px;
+    background-color: #2f3e4a;
   }
   .winter footer p {
     color: #fff;
   }
   .winter .exhibit-page-nav {
-    background-color: rgb(51,51,103);
+    background-color: #4b6569;
   }
   .winter .exhibit-page-nav .current, .winter .exhibit-child-nav .current {
-    background-color: rgba(255,255,255, 0.25);
+    background-color: rgba(0, 0, 0, 0.1);
   }
   .winter .exhibit-page-nav a:link, .winter .exhibit-page-nav a:visited {
     color: #def9ff;
@@ -2050,10 +1905,9 @@
   #site-title {
     width: 66.10169%;
     float: left;
+    margin-right: 1.69492%;
     display: inline;
     text-align: left;
-    clear:left;
-    margin: -25px 1.69% 0px -0px;
   }
   #site-title:after {
     content: "";
@@ -2077,13 +1931,8 @@
     padding: 0.75em 16px;
   }
   nav.top ul li:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
   }
-
-  nav.top ul li.active > a {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-
   nav.top ul li:hover > ul {
     display: block;
   }
@@ -2102,7 +1951,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
   }
   nav.top ul li ul li ul {
     position: absolute;
@@ -2130,7 +1978,8 @@
     margin-right: 0;
     *margin-left: -1em;
     display: inline;
-   }
+    margin-top: 1.875em;
+  }
   #search-container input {
     padding: 0.46875em 8px;
   }
@@ -2171,8 +2020,7 @@
   }
 
   /* !---------- Home ---------- */
-
-    #home #content #intro {
+  #home #content #intro {
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 1.125em;
@@ -2182,43 +2030,21 @@
   }
   #home #content #featured-item {
     margin-bottom: 1.5em;
-    width: 50%;
+    width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
     display: inline;
   }
-
   #home #content #featured-item .image {
     display: inline-block;
-    max-width: 100%;
+    width: 100%;
   }
   #home #content #featured-item img {
     width: 100%;
     height: auto;
   }
-
- #home #content #featured-collection {
-    margin-bottom: 1.5em;
-    width: 50%;
-    float: left;
-    margin-right: 1.69492%;
-    display: inline;
-  }
-
- #home #content #featured-exhibit {
-    margin-bottom: 1.5em;
-    width: 50%;
-    float: left;
-    margin-right: 1.69492%;
-    display: inline;
-  }
-
-  #home #content #recent-items {
-    vertical-align:top;
-  }
-
   #home #content > div {
-    width: 45%;
+    width: 66.10169%;
     float: right;
     margin-right: 0;
     *margin-left: -1em;

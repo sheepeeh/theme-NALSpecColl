@@ -25,7 +25,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     <?php $exhibitCount++; ?>
     <div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
         <h2><?php echo link_to_exhibit(); ?></h2>
-        <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
+        <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true, 'snippet' => 750))): ?>
         <div class="description"><?php echo $exhibitDescription; ?></div>
         <?php endif; ?>
         <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>

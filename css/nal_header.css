@@ -1,0 +1,275 @@
+  /*******************/
+ /* Top-most header */
+/*******************/
+
+
+#header:after, #footer_first:after, #footer_second:after, #footer:after {
+    clear: both;
+}
+#header:before, #header:after, #footer_first:before, #footer_first:after, #footer_second:before, #footer_second:after, #footer:before, #footer:after {
+    content: "";
+    display: table;
+}
+
+#header {
+    margin-top: 0.5em;
+    width:960px; 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #header {
+    width: 768px !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #header {
+    width: 300px !important;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #header {
+    width: 420px !important;
+  }
+}
+
+
+@media only screen and (max-width: 640px) {
+  #header {
+    width: 95%;
+  }
+}
+
+.header__logo {
+    float: left;
+    margin: 5px 0px 0px -10%;
+    padding: 0px;
+}
+
+.header__logo-image {
+    vertical-align: bottom;
+    padding: 2px;
+}
+
+.header__name-and-slogan {
+    float: left;
+    margin-left:-2%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+#site-title,#nal-logos,#search-container {
+    clear:both;
+    }
+}
+@media only screen and (max-width: 767px) {
+#site-title,#nal-logos,#search-container {
+    clear:both;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ #site-title,#nal-logos,#search-container {
+    clear:both;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+  #footer-links {
+    width: 95%;
+    line-height: 1em;
+  }
+}
+
+.header__site-name {
+    margin: 0px;
+    font-size: 1.125em;
+    font-family: Helvetica;
+    line-height: 1.5em !important;
+    padding-top: 5px;
+    font-variant:normal;
+    font-weight: 600;
+    letter-spacing: 0;
+    padding: 5px 0px 0px 0px !important;
+
+}
+
+.header__site-link:link, .header__site-link:visited {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+.header__site-slogan a, .header__site-slogan a:hover, .header__site-slogan a:focus {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+.header__site-slogan {
+    margin: 0px;
+    font-size: 0.938em;
+    font-family: Helvetica;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+#sub-links {
+    color: #F2F2F2;
+    float: right;
+    background-color: #807E4D;
+    border: 2px solid #807E4D;
+    font-size: 80%;
+    text-align: justify;
+    max-width: 415px;
+}
+
+
+
+#sub-links li a {
+    font-size: 85%;
+    text-decoration: none;
+    color: #FFF;
+}
+
+#sub-links > ul > li {
+    display: inline-block;
+    width: auto;
+    border-right: 1px solid #FFF;
+    padding: 0px 15px;
+}
+
+#sub-links > ul > li:last-child {
+    border-right: medium none;
+}
+
+@media only screen and (max-width: 640px) {
+  #sub-links > ul > li {
+    padding:0px 3px;
+  }
+}
+
+
+#ask:after {
+    content: " a Question";
+}
+
+#contact:after {
+    content: " Us";
+}
+
+#visit:after {
+    content: " the Library";
+}
+
+.header__secondary-menu {
+    float: right;
+}
+
+#sub-nav-container {
+    font-size: 1.5em;
+    font-family: Arial;
+    text-align: right;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+#sub-nav-container #sub-links ul {
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.inline {
+    display: inline;
+    padding: 0px;
+}
+
+ul.inline li {
+    display: inline;
+    list-style-type: none;
+    padding: 0px 1em 0px 0px;
+}
+
+
+ .breadcrumbs {
+    font-size: 10pt;
+    margin-left: 5px;
+    line-height: 2.5em;
+    clear:both;
+}
+
+  /*******************/
+ /* Footer          */
+/*******************/
+
+#footer-links {
+    color: #FFF;
+    font-size: 0.8em;
+    font-weight: normal;
+    text-align: center;
+    line-height: 0.8em;
+    padding: 20px 0px;
+    font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
+    }
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #footer-links {
+    width: 768px !important;
+    line-height: 1em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #footer-links {
+    width: 300px !important;
+    line-height: 1em;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #footer-links {
+    width: 420px !important;
+    line-height: 1em;
+  }
+}
+
+
+@media only screen and (max-width: 640px) {
+  #footer-links {
+    width: 95%;
+    line-height: 1em;
+  }
+}
+
+#footer-links a {
+    margin: 0px;
+    color: #FFF;
+    vertical-align: baseline;
+    background: none repeat scroll 0% 0% transparent;
+    text-decoration: none;
+}
+
+.ext {
+    background: url('../images/extlink.png') no-repeat scroll right center transparent;
+    padding-right: 12px;
+}
+
+#footer {
+    padding-top: 5px;
+    text-align:center;
+}
+
+
+#footer-address {
+    font-size: 0.8em;
+    font-weight: normal;
+    text-align: center;
+    padding: 0px 0px 5px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.bibliog {
+    margin-left: 1.5em;
+    text-indent: -1.5em;
+}
