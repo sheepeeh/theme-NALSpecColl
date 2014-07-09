@@ -10,8 +10,7 @@
                 <p><?php echo $copyright; ?></p>
             <?php endif; ?>
         </div>
-
-         <!-- Begin NAL Footer -->
+    <!-- Begin NAL Footer -->
 
 
         <div id="footer-panels-wrapper">
@@ -39,10 +38,12 @@
 
         </div>
         </footer>
-        <!-- End NAL Footer -->
         
-    <?php fire_plugin_hook('public_footer'); ?>
-    
+    <!-- End NAL Footer -->
+        
+
+    <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>
+
 </footer>
 
 </div><!--end wrap-->

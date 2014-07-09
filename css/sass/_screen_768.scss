@@ -30,6 +30,8 @@ header {
     }
 }
 
+
+
 /* !---------- Navigation --------- */
 
 nav.top {
@@ -130,6 +132,11 @@ header, nav.top, #content, footer {
     @include padding-trailer(2);
 }
 
+#content #sort-links {
+    float: right;
+    text-align: center;
+}
+
 
 /* !---------- Home ---------- */
 
@@ -149,6 +156,7 @@ header, nav.top, #content, footer {
         .image {
             display: inline-block;
             width: 100%;
+            height: auto;
         }
         
         img {
@@ -159,12 +167,6 @@ header, nav.top, #content, footer {
     
     & > div {
         @include span-columns(8 omega, 12);
-        
-        img {
-            width: 20%;
-            float: left;
-            margin-right: 16px;
-        }
     }
 }
 
@@ -172,18 +174,7 @@ header, nav.top, #content, footer {
 /* !---------- Items --------- */
 
 .items {
-    
-    #content #sort-links {
-        float: right;
-        text-align: center;
-    }
-    
     .item { clear: both;}
-    
-    .item-img {
-        width: 10%;
-        float: left;
-    }
         
     #advanced-search-form {
     

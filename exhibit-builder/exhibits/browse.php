@@ -21,17 +21,21 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 <?php echo pagination_links(); ?>
 
 <?php $exhibitCount = 0; ?>
+<?php $exhibitCount = 0; ?>
 <?php foreach (loop('exhibit') as $exhibit): ?>
-    <?php $exhibitCount++; ?>
-    <div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
-        <h2><?php echo link_to_exhibit(); ?></h2>
-        <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true, 'snippet' => 750))): ?>
-        <div class="description"><?php echo $exhibitDescription; ?></div>
-        <?php endif; ?>
-        <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
-        <p class="tags"><?php echo __('Tags: ') . $exhibitTags; ?></p>
-        <?php endif; ?>
-    </div>
+<?php $exhibitCount++; ?>
+<div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
+<h2><?php echo link_to_exhibit(); ?></h2>
+<?php if ($exhibitImage = record_image($exhibit, 'square_thumbnail')): ?>
+<?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
+<?php endif; ?>
+<?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true, 'snippet' => 750))): ?>
+<div class="description"><?php echo $exhibitDescription; ?></div>
+<?php endif; ?>
+<?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
+<p class="tags"><?php echo __('Tags: ') . $exhibitTags; ?></p>
+<?php endif; ?>
+</div>
 <?php endforeach; ?>
 
 <?php echo pagination_links(); ?>

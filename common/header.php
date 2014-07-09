@@ -23,8 +23,7 @@
     <!-- Stylesheets -->
     <?php
     queue_css_url('//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
-    queue_css_file('normalize');
-    queue_css_file('style', 'screen');
+    queue_css_file(array('iconfonts', 'normalize', 'style'), 'screen');
     queue_css_file('print', 'print');
     queue_css_file('nal_header');
     echo head_css();
@@ -71,7 +70,11 @@
                 <?php echo link_to_home_page(theme_logo()); ?>
             </div>
             <div id="search-container">
+                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
                 <?php echo search_form(array('show_advanced' => true)); ?>
+                <?php else: ?>
+                <?Php echo search_form(); ?>
+                <?php endif; ?>
             </div>
              <!-- Bread crumbs -->
 <div class="breadcrumbs"> <a href="http://nal.usda.gov">National Agricultural Library</a> &gt; <a href="http://specialcollections.nal.usda.gov/" title="Special Collections at the National Agricultural Library">Special Collections</a> &gt; Exhibits</div>
@@ -83,3 +86,8 @@
         </nav>
 
         <div id="content">
+            <?php
+                if(! is_current_url(WEB_ROOT)) {
+                  fire_plugin_hook('public_content_top', array('view'=>$this));
+                }
+            ?>
