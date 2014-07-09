@@ -71,6 +71,7 @@ function link_to_related_exhibits($item) {
 
     if(!empty($exhibits)) {
         $inlist = array();
+        echo '<div id="related-exhibits" class="element">';
         echo '<h3>Appears in Exhibits</h3>';
         foreach($exhibits as $exhibit) {
             if (!in_array($exhibit->slug, $inlist)) {
@@ -78,6 +79,7 @@ function link_to_related_exhibits($item) {
                 array_push($inlist, $exhibit->slug);
             }
         }
+        echo '</div>';
     }
 }
 

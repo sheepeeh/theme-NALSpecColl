@@ -48,9 +48,9 @@
     </div>
     <?php endif; ?>
 
-     <div id="related-exhibits" class="element">
+     
         <?php echo link_to_related_exhibits($item); ?>
-    </div> 
+
 
         <div id="previous-page">
             <?php echo to_previous() ?>
