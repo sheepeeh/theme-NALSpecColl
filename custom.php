@@ -75,7 +75,7 @@ function link_to_related_exhibits($item) {
         echo '<h3>Appears in Exhibits</h3>';
         foreach($exhibits as $exhibit) {
             if (!in_array($exhibit->slug, $inlist)) {
-                echo '<p><a href="/exhibits/merrigan/exhibits/show/'.$exhibit->slug.'">'.$exhibit->title.'</a></p>';
+                echo '<p><a href="/exhibits/exhibits/show/'.$exhibit->slug.'">'.$exhibit->title.'</a></p>';
                 array_push($inlist, $exhibit->slug);
             }
         }
@@ -92,7 +92,7 @@ function to_previous() {
     $referer = $_SERVER['HTTP_REFERER'];
     $uri = $_SERVER['REQUEST_URI'];
 
-    if ($uri != "/exhibits/merrigan/" && $uri != "/exhibits/merrigan") {
+    if ($uri != "/exhibits" && $uri != "/exhibits") {
            if (strpos($referer, 'exhibits/show') != false && strpos($referer, '/item/') == false) {
               echo '<p><a href="' . $referer . '" title="Return to the previous page">&larrhk; Back to Exhibit</a></p>';
            } elseif (strpos($uri, 'files/show') != false) {

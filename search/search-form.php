@@ -1,4 +1,4 @@
-<form id="search-form" name="search-form" action="/exhibits/merrigan/items/browse" method="get">    <input type="text" name="search" id="query" value="" title="Search">        
+<form id="search-form" name="search-form" action="/exhibits/items/browse" method="get">    <input type="text" name="search" id="query" value="" title="Search">        
 <fieldset id="advanced-form" title="advanced search fields">
 <div id="search-narrow-by-fields" class="field">
         <div class="label"><?php echo __('<label for="advanced-0-element_id">Narrow by Specific Field</label>'); ?></div>
