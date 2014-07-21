@@ -77,7 +77,7 @@
         'Contributor',
         'Date',
         'Description',
-        'Identifier',
+        'Source',
         'Subject',
         'Title',
         'Type'
