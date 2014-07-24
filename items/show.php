@@ -5,7 +5,11 @@
 <div id="primary">
 
     <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
-    <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
+    <?php if (metadata('item','item_type_id') == 6) {
+        echo files_for_item(array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
+    } else {
+        echo files_for_item(array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image for the first content page of the item, linking to the full file.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
+    } ?>
     <?php endif; ?>
     
     <!-- The following prints a list of all tags associated with the item -->
