@@ -753,9 +753,10 @@
   #home #content div#recent-items .item {
     margin-left: -16px;
     padding-left: 16px;
-    margin-right: -16px;
-    padding-right: 16px;
+    padding-right: 8px;
     border-top: 1px solid #dfe2e2;
+    overflow: hidden;
+    margin-bottom: 1em;
   }
   #home #content div#recent-items .item:first-of-type {
     border-top: 0;
@@ -764,7 +765,7 @@
     margin-top: 0em;
   }
   #home #content div#recent-items .item h3 {
-    margin-top: 0.75em;
+    margin-top: 0.5em;
   }
   #home #content div .items-list {
     margin: 0 -16px;
@@ -772,6 +773,7 @@
   #home #content div .items-list .item-description {
     margin: 0.75em 0 0;
   }
+
   #home #content div h3, #home #content div h4, #home #content div h5, #home #content div h6,
   #home #content div p, #home #content div input, #home #content div textarea {
     margin-top: 0.75em;
@@ -781,6 +783,10 @@
     margin-top: 0;
     font-weight: 400;
     font-variant: small-caps;
+  }
+
+ #home #content div#recent-items .item:first-of-type img {
+    margin-top: 0em;
   }
   #home #content div img {
     border: 1px solid #dfe2e2;
@@ -792,6 +798,19 @@
     box-sizing: border-box;
     *behavior: url("../javascripts/boxsizing.htc");
   }
+ #recent-items .item img {
+    float: right;
+    margin-left: 18px;
+    margin-bottom: 18px;
+    margin-right:0.5em;
+    margin-top:18px;
+    max-height: 6.5em !important;
+    border:none !important;
+}
+#recent-items .item {
+  list-style: none;
+}
+
   #home #content div .show {
     display: block;
     text-transform: capitalize;
@@ -2149,7 +2168,7 @@
     display: inline;
     text-align: left;
     clear:left;
-    margin: -25px 1.69% 0px -0px;
+    margin: -25px 0px 0px -9.5%;
   }
   #site-title:after {
     content: "";

@@ -1,5 +1,8 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show')); ?>
-
+<ul class="item-pagination navigation">
+    <?php custom_paging(); ?>
+</ul>
+<br />
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
 <div id="primary">

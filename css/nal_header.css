@@ -53,6 +53,7 @@
 .header__name-and-slogan {
     float: left;
     margin-left:-2%;
+    margin-top:0.625em;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -80,9 +81,9 @@
 
 .header__site-name {
     margin: 0px;
-    font-size: 1.125em;
+    font-size: 1em;
     font-family: Helvetica;
-    line-height: 1.5em !important;
+    line-height: 1em !important;
     padding-top: 5px;
     font-variant:normal;
     font-weight: 600;
@@ -103,7 +104,7 @@
 
 .header__site-slogan {
     margin: 0px;
-    font-size: 0.938em;
+    font-size: 0.875em;
     font-family: Helvetica;
     font-weight: bold;
     line-height: 1.5em;
@@ -195,8 +196,7 @@ ul.inline li {
 
  .breadcrumbs {
     font-size: 10pt;
-    margin-left: 5px;
-    line-height: 2.5em;
+    margin: 0px 0px 0.25em -9.5%;
     clear:both;
 }
 

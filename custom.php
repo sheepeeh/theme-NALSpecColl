@@ -268,7 +268,7 @@ function custom_paging() {
         }
 
         //Browsing exhibit 8 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/micr-exhibits') != false) {
+        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/small-exhibits') != false) {
             $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=8&submit_search=Search&sort_field=Dublin+Core%2CDate";
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
