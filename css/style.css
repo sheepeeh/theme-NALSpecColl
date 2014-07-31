@@ -208,6 +208,7 @@
   .record {
     clear: both;
     overflow: hidden;
+    max-height:400px;
   }
 
   /* !---------- Navigation ---------- */
@@ -679,6 +680,7 @@
     padding: 0.75em 16px 0 !important;
     width: 100% !important;
     clear: both;
+    text-align:right;
   }
   #content .view-items-link + div {
     border-color: #DFE2E2;
@@ -756,7 +758,6 @@
     padding-right: 8px;
     border-top: 1px solid #dfe2e2;
     overflow: hidden;
-    margin-bottom: 1em;
   }
   #home #content div#recent-items .item:first-of-type {
     border-top: 0;
@@ -781,8 +782,7 @@
   }
   #home #content div h3 {
     margin-top: 0;
-    font-weight: 400;
-    font-variant: small-caps;
+    font-weight: 400; 
   }
 
  #home #content div#recent-items .item:first-of-type img {
@@ -804,7 +804,7 @@
     margin-bottom: 18px;
     margin-right:0.5em;
     margin-top:18px;
-    max-height: 6.5em !important;
+    max-height: 8.67em !important;
     border:none !important;
 }
 #recent-items .item {
@@ -840,9 +840,7 @@
   #home #featured-item img {
     margin-bottom: 0;
   }
-  #home #recent-items h2 {
-    padding-bottom: 0.75em;
-  }
+
 
   /* !---------- Items ---------- */
   .items.show h3 {
@@ -1046,6 +1044,13 @@
   }
   .advanced-search #submit_search_advanced {
     margin-bottom: 0 !important;
+  }
+
+  #content #advanced-search-form > div {
+    border:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 
   /* !---------- File Pages ---------- */
@@ -1432,15 +1437,12 @@
 .winter .browse .disclaimer, .advanced-search .disclaimer {
     font-style: italic;
     font-size: 80%;
-    margin-top: -15px;
 }
 
-  .winter a:link {
-    color: rgb(0,0,153)
+  .winter a:link, a:visited {
+    color: rgb(34,40,159);
   }
-  .winter a:visited {
-    color: rgb(107,123,173);
-  }
+  
   .winter a:hover, .winter a:active {
     color: rgb(0, 93, 255);
   }
@@ -1449,7 +1451,7 @@
   }
 
   .winter nav.top {
-    background-color: rgb(107,123,173);
+    background-color: #333367;
   }
   .winter nav.top li:hover a {
     color: #fff;
@@ -1464,11 +1466,11 @@
   }
 
   .winter nav.top a:link, .winter nav.top a:visited {
-    color: #def9ff;
+    color: #fff;
   }
 
   .winter nav.top ul li ul {
-    background-color: rgb(107,123,173);
+    background-color: #333367;
   }
   .winter nav.top ul li ul li > a:link, .winter nav.top ul li ul li > a:visited, .winter nav.top ul li ul li > a:active, .winter nav.top ul li ul li > a:hover {
     color: #fff;
@@ -1497,7 +1499,7 @@
     border-color: rgb(107,123,173);
   }
   .winter #content > div, .winter #content #primary > div, .winter #content #sidebar > div,
-  .winter #content #advanced-search-form > div, .winter #content #exhibit-pages {
+  .winter #content #exhibit-pages {
     border-color: rgb(51,51,103);
   }
   .winter #content #primary > div, .winter #content #sidebar > div {
@@ -2306,6 +2308,7 @@
     float: left;
     margin-right: 1.69492%;
     display: inline;
+    max-height:500px;
   }
 
   #home #content #featured-item .image {
