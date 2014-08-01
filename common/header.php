@@ -23,8 +23,8 @@
     <!-- Stylesheets -->
     <?php
     queue_css_url('//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
-    queue_css_file(array('iconfonts', 'normalize', 'style'), 'screen');
-    queue_css_file('print', 'print');
+    queue_css_file(array('iconfonts', 'normalize'), 'screen');
+    queue_css_file('style');
     queue_css_file('nal_header');
     echo head_css();
     ?>
