@@ -13,108 +13,175 @@
 
 #header {
     margin-top: 0.5em;
-    width:960px; 
+    width:100%;
+    padding-left:0px !important;
+    padding-right:0px !important;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   #header {
-    width: 768px !important;
+    width: 95%;
+    margin-left:1%;
   }
+
+   header #advanced-form > p:nth-child(2), #site-title,#nal-logos,#search-container,#sub-nav-container,#header_logo_site_info {
+        clear:both;
+        float:none;
+        width:100%;
+        text-align:left;
+  }
+
+  header #advanced-search:after {
+    margin-top:-25%;
+  }
+
+  header #search-form input[type="submit"] {
+    width:25%;
+  }
+  
+  header  #advanced-search {
+    margin-left:-2em;
+  }
+
 }
 @media only screen and (max-width: 767px) {
   #header {
-    width: 300px !important;
+    width: 95%;
+    margin-left:1%;
   }
+
+   header #advanced-form > p:nth-child(2), #site-title,#nal-logos,#search-container,#sub-nav-container,#header_logo_site_info {
+        clear:both;
+        float:none;
+        width:100%;
+        text-align:left;
+  }
+  header #advanced-search:after {
+    margin-top:-25%;
+  }
+  
+  header  #advanced-search {
+    margin-left:-2em;
+  }
+
+  header #search-form input[type="submit"] {
+    width:25%;
+  }
+  
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   #header {
-    width: 420px !important;
+    width: 95%;
+    margin-left:1%;
   }
+
+   header #advanced-form > p:nth-child(2), #site-title,#nal-logos,#search-container,#sub-nav-container,#header_logo_site_info {
+        clear:both;
+        float:none;
+        width:100%;
+        text-align:left;
+  }
+  header #advanced-search:after {
+    margin-top:-25%;
+  }
+
+  
+  header  #advanced-search {
+    margin-left:-2em;
+  }
+
+
+  header #search-form input[type="submit"] {
+    width:25%;
+  }
+  
+  
 }
 
 
 @media only screen and (max-width: 640px) {
   #header {
     width: 95%;
+    margin-left:1%;
   }
+
+  header #advanced-form > p:nth-child(2), #site-title,#nal-logos,#search-container,#sub-nav-container,#header_logo_site_info {
+        clear:both;
+        float:none;
+        width:100%;
+        text-align:left;
+  }
+header   #advanced-search:after {
+    margin-top:-25%;
+  }
+  
+  header  #advanced-search {
+    margin-left:-2em;
+  }
+
+  header #search-form input[type="submit"] {
+    width:25%;
+  }
+  
+
+  
 }
 
-.header__logo {
-    float: left;
-    margin: 5px 0px 0px -10%;
-    padding: 0px;
-}
 
 .header__logo-image {
     vertical-align: bottom;
     padding: 2px;
+    float:left;
 }
 
 .header__name-and-slogan {
-    float: left;
-    margin-left:-2%;
     margin-top:0.625em;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-#site-title,#nal-logos,#search-container {
-    clear:both;
-    }
-}
-@media only screen and (max-width: 767px) {
-#site-title,#nal-logos,#search-container {
-    clear:both;
-    }
-}
-@media only screen and (min-width: 480px) and (max-width: 767px) {
- #site-title,#nal-logos,#search-container {
-    clear:both;
-    }
-}
-
-@media only screen and (max-width: 640px) {
-  #footer-links {
-    width: 95%;
-    line-height: 1em;
-  }
-}
 
 .header__site-name {
-    margin: 0px;
-    font-size: 1em;
+    margin-top: 0px;
+    padding-top:0px;
+    font-size: 1.15em;
     font-family: Helvetica;
-    line-height: 1em !important;
-    padding-top: 5px;
+    font-weight: bold;
+    line-height: 1em;
     font-variant:normal;
-    font-weight: 600;
     letter-spacing: 0;
-    padding: 5px 0px 0px 0px !important;
-
+    color: #5C5C5C !important;
 }
 
 .header__site-link:link, .header__site-link:visited {
-    color: #000 !important;
+    color: #000;
     text-decoration: none;
 }
 
 .header__site-slogan a, .header__site-slogan a:hover, .header__site-slogan a:focus {
-    color: #000 !important;
+    color: #000;
     text-decoration: none;
 }
 
 .header__site-slogan {
     margin: 0px;
-    font-size: 0.875em;
+    font-size: 1.3em;
+    line-height:1.3em;
     font-family: Helvetica;
     font-weight: bold;
-    line-height: 1.5em;
+    font-variant:normal;
+    color:#000 !important;
+    padding-top:10px;
+}
+
+.header__site-link:link, .header__site-link:visited {
+    color: #5C5C5C;
+    text-decoration: none;
 }
 
 #sub-links {
     color: #F2F2F2;
     float: right;
-    background-color: #807E4D;
-    border: 2px solid #807E4D;
+    background-color: #333367;
+    border: 2px solid #333367;
     font-size: 80%;
     text-align: justify;
     max-width: 415px;
@@ -166,6 +233,7 @@
     font-size: 1.5em;
     font-family: Arial;
     text-align: right;
+    margin-top:0.25em;
 }
 
 .clearfix:after {
@@ -196,7 +264,6 @@ ul.inline li {
 
  .breadcrumbs {
     font-size: 10pt;
-    margin: 0px 0px 0.25em -9.5%;
     clear:both;
 }
 
@@ -292,4 +359,8 @@ ul.inline li {
 .bibliog {
     margin-left: 1.5em;
     text-indent: -1.5em;
+}
+
+.hidden {
+  display: none;
 }

@@ -41,18 +41,18 @@
 
   /* !---------- Headings ---------- */
   h1 {
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 1.6em;
+    line-height: 1.75em;
   }
 
   h2 {
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 1.4em;
+    line-height: 1.5em;
   }
 
   h3 {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.2em;
+    line-height: 1.3em;
     font-weight: 500;
   }
 
@@ -112,7 +112,7 @@
   select {
     margin: 0 0 1.5em;
     border: 1px solid #dfe2e2;
-    line-height: 36px;
+    line-height: 1.5em;
     height: 36px;
     font-size: 16px;
     padding:.25em;
@@ -392,12 +392,12 @@
 
   /* !---------- Header ---------- */
   #site-title {
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 1.6em;
+    line-height: 1.75em;
     font-weight: 300;
     text-align: center;
     margin: 0;
-    padding-top: 0.75em;
+
     }
 
   #search-container {
@@ -449,7 +449,7 @@
     top: 0;
     left: 90%;
     font-weight: bold;
-    line-height: 30px;
+    line-height: 1.3em;
     background-color: #4b6569;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -467,7 +467,7 @@
     display: block;
     text-indent: 0;
     text-align: center;
-    margin-top: -1.75em;
+    margin-top: -50%;
   }
 
   #advanced-form {
@@ -529,8 +529,8 @@
     clear: both;
   }
   #content h1 {
-    font-size: 24px;
-    line-height: 48px;
+    font-size: 1.4em;
+    line-height: 1.75em;
     text-transform: uppercase;
     border-top: 0;
     padding: 0 0 0.75em;
@@ -1024,7 +1024,7 @@
     top: 0;
     left: 0;
     position: absolute;
-    line-height: 36px;
+    line-height: 1.5em;
   }
 
   .advanced-search button {
@@ -1160,7 +1160,7 @@
     margin-bottom: 0;
   }
   .exhibits.show #content h1 {
-    font-size: 32px;
+    font-size: 1.6em;
   }
   .exhibits.show #content #primary:first-child {
     margin-top: 1.5em;
@@ -1447,7 +1447,7 @@
     color: rgb(0, 93, 255);
   }
   .winter header {
-    background: #fff url('../images/sc_banner.png') no-repeat right top;
+    background: #fff;
   }
 
   .winter nav.top {
@@ -2170,7 +2170,6 @@
     display: inline;
     text-align: left;
     clear:left;
-    margin: -25px 0px 0px -9.5%;
   }
   #site-title:after {
     content: "";
@@ -2295,8 +2294,8 @@
   /* !---------- Home ---------- */
 
     #home #content #intro {
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 1.4em;
+    line-height: 1.5em;
     margin-bottom: 1.125em;
   }
   #home #content #intro p {
