@@ -43,7 +43,7 @@ if ($recentItems):
     <?php else: ?>
     <p><?php echo __('No recent items available.'); ?></p>
     <?php endif; ?>
-    <p class="view-items-link"><a href="/exhibits/merrigan/items/browse?=">View All Items</a></p>
+    <p class="view-items-link"><a href="<?php echo url("/items/browse?="); ?>">View All Items</a></p>
 </div><!-- end recent-items -->
 <?php endif; ?>
 

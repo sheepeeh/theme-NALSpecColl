@@ -65,23 +65,22 @@ function link_to_related_exhibits($item) {
     INNER JOIN {$db->prefix}exhibit_pages AS ep on ep.exhibit_id = e.id
     INNER JOIN {$db->prefix}exhibit_page_blocks AS epb ON epb.page_id = ep.id
     INNER JOIN {$db->prefix}exhibit_block_attachments AS epba ON epba.block_id = epb.id
-    WHERE epba.item_id = ?";
+    WHERE e.public=1 AND epba.item_id = ?";
 
     $exhibits = $db->getTable("Exhibit")->fetchObjects($select,array($item->id));
 
     if(!empty($exhibits)) {
         $inlist = array();
-        echo '<div id="related-exhibits" class="element">';
         echo '<h3>Appears in Exhibits</h3>';
         foreach($exhibits as $exhibit) {
             if (!in_array($exhibit->slug, $inlist)) {
-                echo '<p><a href="/exhibits/exhibits/show/'.$exhibit->slug.'">'.$exhibit->title.'</a></p>';
+                echo '<div class="element-text"><a href="' . url('/exhibits/show/') . $exhibit->slug . '">'.$exhibit->title.'</a></div>';
                 array_push($inlist, $exhibit->slug);
             }
         }
-        echo '</div>';
     }
 }
+
 
 
 // Link to referring exhibit (for item pages) or referring item page (for file pages)
