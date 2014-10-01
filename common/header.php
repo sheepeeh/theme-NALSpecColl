@@ -41,7 +41,7 @@
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap">
         <a class="hidden" alt="Skip to content." href="#content">Skip to content.</a><!--Skip link for screen readers. -->
-        <header>
+        <header id="header-back">
             <!-- Begin NAL main header -->
                  <header class="header" id="header" role="banner">
 
