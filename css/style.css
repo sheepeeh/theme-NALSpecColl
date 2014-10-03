@@ -91,6 +91,8 @@
 
     /* !---------- Form Elements ---------- */
     label {
+        font-weight:500;
+
         display: inline-block;
 
         padding-top: .75em;
@@ -133,10 +135,9 @@
     }
 
     select {
-        font-size: 16px;
-        line-height: 1.5em;
-
-        height: 36px;
+        font-size: 1em;
+        font-family: Helvetica, Arial, sans-serif;
+        
         margin: 0 0 1.5em;
         padding: .25em;
 
@@ -158,6 +159,12 @@
 
         border: 0;
     }
+
+    ::-webkit-input-placeholder {color:#999; text-align:center;  font-style: italic;;}
+    ::-moz-placeholder {color:#999; text-align:center;  font-style: italic;;} /* firefox 19+ */
+    :-moz-placeholder {color:#999; text-align:center;  font-style: italic;;}
+    :-ms-input-placeholder {color:#999; text-align:center;  font-style: italic;;} /* ie */
+    
 
     /* !---------- Global classes ---------- */
     .container {
@@ -606,12 +613,17 @@
     #advanced-form label {
         margin: 0;
         padding: 0;
+        font-weight:500;
     }
     #advanced-form p {
         margin: .75em 0;
     }
     #advanced-form p:last-of-type {
-        margin-bottom: 0;
+        margin-bottom: 0px;
+        clear: both;
+        font-weight: bold;
+        text-align: right;
+        padding-top: 1em;    
     }
 
     /* !---------- Footer ---------- */
@@ -1191,6 +1203,7 @@
     .advanced-search #content form > div .label {
         margin-top: .75em;
         margin-bottom: .75em;
+        font-weight:500;
     }
     .advanced-search #content form > div:after {
         display: table;
@@ -1363,6 +1376,11 @@
     .exhibits .exhibit {
         clear: both;
     }
+
+    .exhibits.browse .image {
+        height: 8em; 
+    }
+
     .exhibits .exhibit-page {
         font-weight: bold;
     }
@@ -1782,6 +1800,7 @@
 
     .winter nav.top ul li ul {
         background-color: #0d233c;
+        margin-top:-2px;
     }
     .winter nav.top ul li ul li > a:link,
     .winter nav.top ul li ul li > a:visited,
@@ -1924,6 +1943,25 @@
     .winter #exhibit-page-navigation span {
         background-color: #fff;
     }
+
+
+    .winter .exhibits.browse #secondary-nav,
+    .winter #secondary-nav.exhibits.browse  {
+        background-color: #0D233C;
+        max-width: 75%;
+    }
+
+     .winter .exhibits.browse #secondary-nav li,
+     .winter #secondary-nav.exhibits.browse li {
+        margin-right: 0px;
+        padding:0.5em;
+     }
+
+    .winter .exhibits.browse #secondary-nav li.active,
+    .winter #secondary-nav.exhibits.browse li.active {
+        background-color: rgba(255,255,255,0.25);
+     }
+
 
     /* !---------- Spring Styles ---------- */
     .spring body {
@@ -2645,6 +2683,7 @@
 
     nav.top ul li.active > a {
         background-color: rgba(255, 255, 255, .25);
+        font-weight: 500;
     }
 
     nav.top ul li:hover > ul {
