@@ -92,7 +92,7 @@ $formAttributes['method'] = 'GET';
     </div>
 
     <div class="field">
-        <?php echo $this->formLabel('collection-search', __('Search By Series')); ?>
+        <?php echo $this->formLabel('collection-search', __('Search By Collection')); ?>
         <div class="inputs">
         <?php
             echo $this->formSelect(
@@ -118,7 +118,7 @@ $formAttributes['method'] = 'GET';
         ?>
         </div>
     </div> -->
-
+<!-- 
     <?php if(is_allowed('Users', 'browse')): ?>
     <div class="field">
     <?php
@@ -135,7 +135,7 @@ $formAttributes['method'] = 'GET';
         </div>
     </div>
     <?php endif; ?>
-
+ -->
    <!--  <div class="field">
         <?php echo $this->formLabel('tag-search', __('Search By Tags')); ?>
         <div class="inputs">
@@ -147,7 +147,7 @@ $formAttributes['method'] = 'GET';
         </div>
     </div> -->
 
-
+<!-- 
     <?php if (is_allowed('Items','showNotPublic')): ?>
     <div class="field">
         <?php echo $this->formLabel('public', __('Public/Non-Public')); ?>
@@ -166,8 +166,8 @@ $formAttributes['method'] = 'GET';
         </div>
     </div>
     <?php endif; ?>
-
-    <div class="field">
+ -->
+<!--     <div class="field">
         <?php echo $this->formLabel('featured', __('Featured/Non-Featured')); ?>
         <div class="inputs">
         <?php
@@ -184,7 +184,7 @@ $formAttributes['method'] = 'GET';
         </div>
     </div>
 
-    <?php fire_plugin_hook('public_items_search', array('view' => $this)); ?>
+ -->    <?php fire_plugin_hook('public_items_search', array('view' => $this)); ?>
     <div>
         <input type="submit" class="submit" name="submit_search" id="submit_search_advanced" value="<?php echo __('Search'); ?>" />
     </div>

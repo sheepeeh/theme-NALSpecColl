@@ -36,9 +36,15 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+
     #header {
         width: 95%;
         margin-left: 1%;
+    }
+
+
+    #header div {
+        margin-bottom:5px;
     }
 
     header #advanced-form > p:nth-child(2),
@@ -65,6 +71,11 @@
 
     header  #advanced-search {
         margin-left: -2em;
+    }
+
+    .breadcrumbs, #site-title {
+        margin-left: 12px;
+        margin-right: 12px;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -73,6 +84,10 @@
         margin-left: 1%;
     }
 
+    #header div {
+        margin-bottom:5px;
+    }
+
     header #advanced-form > p:nth-child(2),
     #site-title,
     #nal-logos,
@@ -96,6 +111,11 @@
 
     header #search-form input[type='submit'] {
         width: 25%;
+    }
+
+    .breadcrumbs, #site-title {
+        margin-left: 12px;
+        margin-right: 12px;
     }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -104,6 +124,14 @@
         margin-left: 1%;
     }
 
+    #header div {
+        margin-bottom:5px;
+    }
+
+    .header__logo-image {
+        margin-top:10px;
+    }
+
     header #advanced-form > p:nth-child(2),
     #site-title,
     #nal-logos,
@@ -130,6 +158,11 @@
     header #search-form input[type='submit'] {
         width: 25%;
     }
+
+    .breadcrumbs, #site-title {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
 }
 
 
@@ -137,6 +170,14 @@
     #header {
         width: 95%;
         margin-left: 1%;
+    }
+
+    #header div {
+        margin-bottom:5px;
+    }
+
+    .header__logo-image {
+        margin-top:10px;
     }
 
     header #advanced-form > p:nth-child(2),
@@ -162,6 +203,11 @@
 
     header #search-form input[type='submit'] {
         width: 25%;
+    }
+
+    .breadcrumbs, #site-title {
+        margin-left: 12px;
+        margin-right: 12px;
     }
 }
 
@@ -401,7 +447,7 @@ ul.inline li {
 .ext {
     padding-right: 12px;
 
-    background: url('../images/extlink.png') no-repeat scroll right center transparent;
+    background: url('../images/extlink.png') no-repeat scroll right center transparent !important;
 }
 
 #footer {

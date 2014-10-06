@@ -77,10 +77,10 @@ function link_to_related_exhibits($item) {
 
     if(!empty($exhibits)) {
         $inlist = array();
-        echo '<h3>Appears in Exhibits</h3>';
+        echo '<div id="exhibits" class="element"><h2>Appears in Exhibits</h2>';
         foreach($exhibits as $exhibit) {
             if (!in_array($exhibit->slug, $inlist)) {
-                echo '<div class="element-text"><a href="' . url('/exhibits/show/') . $exhibit->slug . '">'.$exhibit->title.'</a></div>';
+                echo '<div class="element-text"><a href="' . url('/exhibits/show/') . $exhibit->slug . '">'.$exhibit->title.'</a></div></div>';
                 array_push($inlist, $exhibit->slug);
             }
         }
