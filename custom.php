@@ -42,6 +42,7 @@ function exhibit_builder_page_nav_sneaky($exhibitPage = null)
         $pageExhibit = $page->getExhibit();
         $pageParent = $page->getParent();
         $pageSiblings = ($pageParent ? exhibit_builder_child_pages($pageParent) : $pageExhibit->getTopPages());
+
     
         $html .= "<li>\n<ul class=\"exhibit-nav-level-$levelNumber\">\n";
         $levelNumber +=1;
@@ -80,10 +81,11 @@ function link_to_related_exhibits($item) {
         echo '<div id="exhibits" class="element"><h2>Appears in Exhibits</h2>';
         foreach($exhibits as $exhibit) {
             if (!in_array($exhibit->slug, $inlist)) {
-                echo '<div class="element-text"><a href="' . url('/exhibits/show/') . $exhibit->slug . '">'.$exhibit->title.'</a></div></div>';
+                echo '<div class="element-text"><a href="' . url('/exhibits/show/') . $exhibit->slug . '">'.$exhibit->title.'</a></div>';
                 array_push($inlist, $exhibit->slug);
             }
         }
+        echo '</div>';
     }
 }
 

@@ -9,7 +9,14 @@ echo head(array(
 <div id="exhibit-pages">
 	<nav>
     	<?php echo exhibit_builder_page_nav_sneaky(); ?>
+    		<?php if (count(exhibit_builder_child_pages()) > 0): ?>
+		<nav id="exhibit-child-pages" class="secondary-nav">
+			<?php echo exhibit_builder_child_page_nav(); ?>
+		</nav>
+	<?php endif; ?>
 	</nav>
+
+
 </div>
 
 <div role="main" class="primary">
