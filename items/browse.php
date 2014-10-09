@@ -27,6 +27,7 @@ $sortLinks[__('Date Added')] = 'added';
 <?php endif; ?>
 
 <?php foreach (loop('items') as $item): ?>
+<?php if (metadata($item,'id') != 1058): ?>
 <div class="item hentry">
 
     <div class="item-meta">
@@ -75,6 +76,7 @@ $sortLinks[__('Date Added')] = 'added';
 
     </div><!-- end class="item-meta" -->
 </div><!-- end class="item hentry" -->
+<?php endif; ?>
 <?php endforeach; ?>
 
 <?php echo pagination_links(); ?>

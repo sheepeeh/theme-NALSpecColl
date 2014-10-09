@@ -40,8 +40,9 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap">
+    <div style="background-color:yellow;color:red;font-weight:600;font-size:1.5em;width:100%;line-height:1.75em;margin-bottom:1em;padding:0.5em"><p style="width:80%;margin:0 10%;text-align:center;">Site currently in BETA. Please do not share the URL or otherwise provide public access.</p></div>
         <a class="hidden" alt="Skip to content." href="#content">Skip to content.</a><!--Skip link for screen readers. -->
-        <header>
+        <header id="header-back">
             <!-- Begin NAL main header -->
                  <header class="header" id="header" role="banner">
 
