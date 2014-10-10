@@ -1,5 +1,11 @@
 <?php
-$collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 'Title')));
+    $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 'Title')));
+
+    if (preg_match('/[sS]eries/',$collectionTitle)==true) {
+        $items_link = 'Items in %s';
+    } else {
+        $items_link = 'Items in the %s Collection';
+    }
 ?>
 
 <?php echo head(array('title'=> $collectionTitle, 'bodyclass' => 'collections show')); ?>
@@ -10,7 +16,7 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
 
 <div id="collection-items">
 <p><?php echo metadata('collection', array('Dublin Core', 'Description')); ?></p>
-    <h2><?php echo link_to_items_browse(__('Items in the %s Collection', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
+    <h2><?php echo link_to_items_browse(__($items_link, $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
     <?php if (metadata('collection', 'total_items') > 0): ?>
         <?php foreach (loop('items') as $item): ?>
         <?php $itemTitle = strip_formatting(metadata('item', array('Dublin Core', 'Title'))); ?>
