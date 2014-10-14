@@ -18,8 +18,14 @@ function exhibit_builder_display_random_featured_exhibit_more_text()
 }
 
 
-// Hide in-progress exhibit pages
-function exhibit_builder_page_nav_sneaky($exhibitPage = null)
+
+// Sort exhibit pages by page order
+function exhibit_page_compare ($a, $b) {
+    return strcmp($a->order, $b->order);
+}
+
+// Put exhibit page navigation in a side div, give child lists their own class
+function exhibit_builder_page_nav_side($exhibitPage = null)
 {
     if (!$exhibitPage) {
         if (!($exhibitPage = get_current_record('exhibit_page', false))) {
@@ -28,37 +34,75 @@ function exhibit_builder_page_nav_sneaky($exhibitPage = null)
     }
 
     $exhibit = $exhibitPage->getExhibit();
-    $html = '<ul style="text-indent: -1em; margin-left: 1.5em !important;">' . "\n";
-    $pagesTrail = $exhibitPage->getAncestors();
-    $pagesTrail[] = $exhibitPage;
-    $html .= '<li>';
-    $html .= '<a class="exhibit-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit)) . '">';
-    $html .= html_escape($exhibit->title) .'</a></li>' . "\n";
-    
-    $levelNumber = 1;
-    
-    foreach ($pagesTrail as $page) {
-        $linkText = $page->title;
-        $pageExhibit = $page->getExhibit();
-        $pageParent = $page->getParent();
-        $pageSiblings = ($pageParent ? exhibit_builder_child_pages($pageParent) : $pageExhibit->getTopPages());
+    $eid = $exhibit->id;
+    $db = get_db();
 
-    
-        $html .= "<li>\n<ul class=\"exhibit-nav-level-$levelNumber\">\n";
-        $levelNumber +=1;
-    
-        foreach ($pageSiblings as $pageSibling) {
-            $html .= '<li' . ($pageSibling->id == $page->id ? ' class="current"' : '') . '>';
-            $html .= '<a class="exhibit-page-title" href="' . html_escape(exhibit_builder_exhibit_uri($exhibit, $pageSibling)) . '">';
-            $html .= html_escape($pageSibling->title) . "</a></li>\n";
+    // Get exhibit pages based on current page's parent exhibit
+
+    $select = "
+                SELECT a.*,b.title AS parent_title
+                FROM omeka_exhibit_pages a 
+                LEFT JOIN omeka_exhibit_pages b ON (a.parent_id = b.id)
+                WHERE (a.exhibit_id=?)
+                ORDER BY parent_id,`order`
+                ";
+
+    $pages = $db->getTable("ExhibitPage")->fetchObjects($select,array($eid));
+    $vis = '';
+    $html = '';
+
+    if(!empty($pages)) {
+        // Need a trash bin to prevent double displays
+        $trash = array();
+        $html = '<ul id="exhibit-nav-level1"><li class="exhibit-title"><strong>' . $exhibit->title . "</strong></li>";
+
+        foreach($pages as $page) {
+            // Check the trash
+            if (in_array($page['title'],$trash)==false) {
+                $html .= '<li' . ($exhibitPage->id == $page->id ? ' class="current"' : '') .'><a class="exhibit-page-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit, $page)) . '">' . $page->title . "</a></li>";
+                $children = searchPages($pages,'parent_id',$page->id);
+
+                // Check for children, build/show lists as appropriate
+                if ($children) { 
+                    $allIDs = array();
+                    foreach ($children as $child) { array_push($allIDs,$child->id); }
+
+                    $html .= "<li><ul class='exhibit-nav-level-2'>";
+                    foreach ($children as $child) { 
+                        $grandchildren = searchPages($pages,'parent_id',$child->id);
+                        $grandIDs = array();
+
+                        if ($grandchildren) {
+                            foreach ($grandchildren as $gc) { array_push($grandIDs,$gc->id); array_push($allIDs,$gc->id); }
+                        }
+
+                        if ($exhibitPage->id != $child->parent_id && $exhibitPage->id != $child->id && in_array($exhibitPage->id,$allIDs)==false) { $vis = 'none'; }
+                        
+                        $html .= "<li class=\"$vis" . ($exhibitPage->id == $child->id ? " current" : '') .'"><a class="exhibit-page-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit, $child)) . '">' . $child['title'] . "</a></li>" ; 
+                        array_push($trash,$child['title']);
+                        $vis = '';
+                        
+                        // Check for grandchildren, build/show lists as appropriate
+                        if ($grandchildren) { 
+                            $html .= "<li><ul class='exhibit-nav-level-3'>";
+                            foreach ($grandchildren as $grandchild) { 
+                                if ($exhibitPage->id != $grandchild->parent_id && $exhibitPage->id != $grandchild->id && in_array($exhibitPage->id,$grandIDs)==false) { $vis = 'none'; }
+                                $html .= "<li class=\"$vis" . ($exhibitPage->id == $grandchild->id ? " current" : '') .'"><a class="exhibit-page-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit, $grandchild)) . '">' . $grandchild['title'] . "</a></li>" ; 
+                                array_push($trash,$grandchild['title']);
+                                $vis='';
+                            } 
+                            $html .= "</ul></li>";
+                        }
+                    } 
+                    $html .= "</ul></li>";
+                }
             }
-    
-        $html .= "</ul>\n</li>\n";
+        }
+        $html .= "</ul>";
     }
 
-    $html .= '</ul>' . "\n";
-    $html = apply_filters('exhibit_builder_page_nav', $html);
     return $html;
+
 }
 
 
@@ -411,8 +455,23 @@ function custom_paging_browse()
     }
 }
 
-#Sort files by original filename
+// Sort files by original filename
 function filename_compare ($a, $b) {
     return strcmp($a->original_filename, $b->original_filename);
 }
+
+
+
+// Search a multidimensional array
+function searchPages($arr,$field,$value)
+    {
+        $vals = array();
+       foreach($arr as $key => $member)
+       {
+          if ( $member[$field] === $value )
+             array_push($vals,$member);
+
+       }
+       return $vals;
+    }
 ?>
