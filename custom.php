@@ -410,4 +410,9 @@ function custom_paging_browse()
         echo '<h2>'.link_to_item(metadata('item', array('Dublin Core','Title')), array('class'=>'permalink')).'</h2>';
     }
 }
+
+#Sort files by original filename
+function filename_compare ($a, $b) {
+    return strcmp($a->original_filename, $b->original_filename);
+}
 ?>
