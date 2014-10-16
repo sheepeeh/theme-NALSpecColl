@@ -88,6 +88,20 @@
         list-style-type: disc;
     }
 
+    ul > li {
+        max-width:100%;
+    }
+
+    ul.circle {
+        list-style-type:circle;
+        margin-bottom:0px;
+    }
+
+    ul.square {
+        list-style-type:square;
+        margin-bottom:0px;
+    }
+
     /* !---------- Form Elements ---------- */
     label {
         font-weight:500;
@@ -1703,7 +1717,7 @@
     ul.exhibit-nav-level-3 > li.none {
         display:none;
     }
-
+    
 
     #content .exhibit-item:empty {
         padding: 0;
