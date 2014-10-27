@@ -95,12 +95,15 @@
     ul.circle {
         list-style-type:circle;
         margin-bottom:0px;
+        margin-left:1em;
     }
 
     ul.square {
         list-style-type:square;
         margin-bottom:0px;
+        margin-left:1em;
     }
+
 
     /* !---------- Form Elements ---------- */
     label {
@@ -1615,6 +1618,50 @@
         font-weight:bold;
     }
 
+    .exhibits #processing-report {
+        border-collapse: collapse;
+        border: 1px solid rgba(215, 225, 240, 1);
+        width:100%;
+    }
+
+    .exhibit-table {
+        border-collapse: collapse;
+        border: 1px solid rgba(215, 225, 240, 1);
+        width:100%;    
+    }
+     .exhibit-table thead,
+     .exhibit-table tfoot,
+     .exhibit-table th > a  {
+        background-color: #0D233C;
+        color: #fff;
+        font-weight:bold;
+     }
+    .exhibit-table  td,
+    .exhibit-table  th {
+        padding:0.5em;
+        text-align:left;
+        vertical-align: top;
+    }
+    .exhibit-table.small-text  td,
+    .exhibit-table.small-text th {
+        font-size:0.75em;
+        line-height:1em;
+        text-align:left;
+    }        
+      .exhibit-table  td.empty {
+        text-align:center;
+        vertical-align: middle;
+    }
+    .exhibit-table  tr {
+        border: none;
+        border-top:none;
+    }
+    .exhibit-table tr:nth-child(2n) {
+        background-color: rgba(215, 225, 240, 1);
+    }
+    .exhibit-table  td:first-child {
+        font-weight:bold;
+    }
     #content .exhibit-block h2 {
         font-weight: 500;
         width: 100%;
@@ -1828,6 +1875,34 @@
         padding: 5px;
 
         content: '\201D';
+    }
+
+    .alpha-index {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    .alpha-index li {
+        display: inline;
+        text-decoration: none;
+    }
+
+    .alpha-index  li:after {
+        content: ' \007C ';
+    }
+
+    .alpha-index li:last-child:after {
+        content: '';
+    }
+
+    .index-entries {
+        list-style-type: none;
+    }
+    .index-entries li {
+        margin-left:1em;
+        text-indent:-1em;
     }
 
 
