@@ -76,7 +76,7 @@ function exhibit_builder_page_nav_side($exhibitPage = null)
                             foreach ($grandchildren as $gc) { array_push($grandIDs,$gc->id); array_push($allIDs,$gc->id); }
                         }
 
-                        if ($exhibitPage->id != $child->parent_id && $exhibitPage->id != $child->id && in_array($exhibitPage->id,$allIDs)==false) { $vis = 'none'; }
+                      //  if ($exhibitPage->id != $child->parent_id && $exhibitPage->id != $child->id && in_array($exhibitPage->id,$allIDs)==false) { $vis = 'none'; }
                         
                         $html .= "<li class=\"$vis" . ($exhibitPage->id == $child->id ? " current" : '') .'"><a class="exhibit-page-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit, $child)) . '">' . $child['title'] . "</a></li>" ; 
                         array_push($trash,$child['title']);
@@ -86,7 +86,7 @@ function exhibit_builder_page_nav_side($exhibitPage = null)
                         if ($grandchildren) { 
                             $html .= "<li><ul class='exhibit-nav-level-3'>";
                             foreach ($grandchildren as $grandchild) { 
-                                if ($exhibitPage->id != $grandchild->parent_id && $exhibitPage->id != $grandchild->id && in_array($exhibitPage->id,$grandIDs)==false) { $vis = 'none'; }
+                                if ($exhibitPage->id != $grandchild->parent_id && $exhibitPage->id != $grandchild->id && in_array($exhibitPage->id,$grandIDs)==false ) { $vis = 'none'; }
                                 $html .= "<li class=\"$vis" . ($exhibitPage->id == $grandchild->id ? " current" : '') .'"><a class="exhibit-page-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit, $grandchild)) . '">' . $grandchild['title'] . "</a></li>" ; 
                                 array_push($trash,$grandchild['title']);
                                 $vis='';

@@ -1750,9 +1750,18 @@
     }
 
     ul.exhibit-child-nav > li > a:before,
-    ul.exhibit-nav-level-2 > li > a:before,
+    ul.exhibit-nav-level-2 > li > a:before {
+        content:" –";
+    }
+
     ul.exhibit-nav-level-3 > li > a:before {
-        content:" - ";
+        content:" \2937 ";
+        position: relative;
+        top: -3px;
+    }
+
+    #exhibit-pages > nav li.current > a:before {
+        content: " \2605  ";
     }
 
     ul.exhibit-nav-level-2 > li > a,
@@ -1760,8 +1769,7 @@
         margin-left:1.5em;
     }
  
-    ul.exhibit-nav-level-2 > li.none,
-    ul.exhibit-nav-level-3 > li.none {
+    #exhibit-pages > nav li.none {
         display:none;
     }
     
@@ -2227,10 +2235,7 @@
         background-color: rgba(255,255,255,0.25);
      }
 
-     .winter .exhibit-child-nav > li > a, 
-     .winter .exhibit-nav-level-2 > li.current > a.exhibit-page-title {
-        color: #22289F !important;
-    }
+
 
 
     /* !---------- Spring Styles ---------- */
