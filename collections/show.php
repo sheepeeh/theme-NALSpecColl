@@ -18,30 +18,33 @@
 <p><?php echo metadata('collection', array('Dublin Core', 'Description')); ?></p>
     <h2><?php echo link_to_items_browse(__($items_link, $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
     <?php if (metadata('collection', 'total_items') > 0): ?>
+        <p style="text-align:right;clear:both;"><?php echo link_to_items_browse("View all items in this collection.", array('collection' => metadata('collection', 'id'),'sort_field' => "Dublin Core,Identifier",'sort_order' => 'desc')); ?></p>
         <?php foreach (loop('items') as $item): ?>
         <?php $itemTitle = strip_formatting(metadata('item', array('Dublin Core', 'Title'))); ?>
         <div class="item hentry">
-            <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
-
             <?php if (metadata('item', 'has thumbnail')): ?>
-            <div class="item-img">
-                <?php echo link_to_item(item_image('square_thumbnail', array('alt' => $itemTitle))); ?>
-            </div>
+                <div class="item-img">
+                    <?php echo link_to_item(item_image('square_thumbnail', array('alt' => $itemTitle))); ?>
+                </div>
             <?php endif; ?>
+            <div class="item-meta">
+                <h3><?php echo link_to_item($itemTitle, array('class'=>'permalink')); ?></h3>
 
-            <?php if ($text = metadata('item', array('Item Type Metadata', 'Text'), array('snippet'=>250))): ?>
-            <div class="item-description">
-                <p><?php echo $text; ?></p>
+               <?php if ($text = metadata('item', array('Item Type Metadata', 'Transcription'), array('snippet'=>250))): ?>
+                    <div class="item-description">
+                        <p><?php echo $text; ?></p>
+                    </div>
+                <?php elseif ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
+                    <div class="item-description">
+                        <?php echo $description; ?>
+                    </div>
+                <?php endif; ?>
             </div>
-            <?php elseif ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
-            <div class="item-description">
-                <?php echo $description; ?>
-            </div>
-            <?php endif; ?>
         </div>
         <?php endforeach; ?>
+        <p style="text-align:right;clear:both;"><?php echo link_to_items_browse("View all items in this collection.", array('collection' => metadata('collection', 'id'),'sort_field' => "Dublin Core,Identifier",'sort_order' => 'desc')); ?></p>
     <?php else: ?>
-        <p><?php echo __("There are currently no items within this collection."); ?></p>
+        <p><?php echo __("For items in this collection, please visit the sub-pages below."); ?></p>
     <?php endif; ?>
 </div><!-- end collection-items -->
 

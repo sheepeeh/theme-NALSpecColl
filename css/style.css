@@ -747,16 +747,19 @@
 
         border-bottom: 0;
     }
-    #content .item-meta {
+    #content .item-meta,
+    .collections.show .item-meta {
         padding-bottom: 0;
     }
 
-    #content .item-meta  h2 {
+    #content .item-meta  h2,
+    .collections.show h3 {
         margin-left: 16%;
     }
     #content .item-meta .item-description,
     #content .item-meta .item-creator,
-    #content .item-meta .item-date {
+    #content .item-meta .item-date,
+    .collections.show .item-description {
         padding-top: 0;
         padding-left: 16%;
     }
@@ -764,14 +767,21 @@
     #content .item-meta .item-date {
         line-height: 100%;
     }
-    #content .item-meta .item-img {
+    #content .item-meta .item-img
+    {
         float: left;
 
-        margin: 0 .75em .75em 0;
-        padding: 0;
+        margin: 0px .75em .75em 0px;
+        padding: 0px;
     }
-    #content .item-meta .item-img img {
-        margin: 0;
+    #content .item-meta .item-img img,
+    .collections.show .item-img img {
+        margin: 0px;
+    }
+    .collections.show .item-img  {
+        padding: 1em 0px 0.5em 0px;
+        margin: 0px 0.75em;
+        float:left;
     }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   #content .item-meta .item-img, #content .item-meta .item-img img{
@@ -1384,7 +1394,7 @@
         overflow: hidden;
 
         margin: 0 -16px;
-        padding: 0 16px 1.5em;
+        padding: 0 16px;
 
         border-top: 1px solid #dfe2e2;
     }
