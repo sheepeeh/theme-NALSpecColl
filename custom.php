@@ -40,9 +40,10 @@ function exhibit_builder_page_nav_side($exhibitPage = null)
     // Get exhibit pages based on current page's parent exhibit
 
     $select = "
-                SELECT a.*,b.title AS parent_title
+                SELECT a.*,b.title AS parent_title, c.title AS grandparent_title
                 FROM omeka_exhibit_pages a 
                 LEFT JOIN omeka_exhibit_pages b ON (a.parent_id = b.id)
+                LEFT JOIN omeka_exhibit_pages c ON (b.parent_id = c.id)
                 WHERE (a.exhibit_id=?)
                 ORDER BY parent_id,`order`
                 ";
@@ -54,7 +55,7 @@ function exhibit_builder_page_nav_side($exhibitPage = null)
     if(!empty($pages)) {
         // Need a trash bin to prevent double displays
         $trash = array();
-        $html = '<ul id="exhibit-nav-level1"><li class="exhibit-title"><strong>' . $exhibit->title . "</strong></li>";
+        $html = '<ul id="exhibit-nav-level1"><li><a class="exhibit-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit)) . '">' . $exhibit->title . "</a></li>";
 
         foreach($pages as $page) {
             // Check the trash
