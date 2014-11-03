@@ -6,7 +6,7 @@
 <div id="primary">
 <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
 <div class="exhibit-description">
-    <?php echo $exhibitDescription; ?>
+    <?php echo $this->shortcodes($exhibitDescription); ?>
 </div>
 <?php endif; ?>
 
