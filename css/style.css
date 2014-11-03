@@ -1593,7 +1593,7 @@
      }
     .exhibits #processing-report  td,
     .exhibits #processing-report  th {
-        padding:0.5em;
+        padding:0.4em;
         text-align:center;
         vertical-align: top;
     }
@@ -1737,15 +1737,25 @@
     
     ul.exhibit-child-nav, 
     ul.exhibit-nav-level-2 {
-        font-size:90%;
+        font-size:95%;
         line-height:1.2em;
         text-indent:-1em;
         margin-left: 1.5em;
         margin-bottom:0px;
     }
 
+    ul.exhibit-nav-level-3 > li {
+        font-size:95%;
+        line-height:1.2em;
+        text-indent:-1em;
+        margin-left: 1.5em;
+        margin-bottom:0px;
+    }
+
+
     ul.exhibit-child-nav > li, 
-    ul.exhibit-nav-level-2 > li {
+    ul.exhibit-nav-level-2 > li,
+    ul.exhibit-nav-level-3 > li  {
         clear:both;
     }
 
@@ -1755,13 +1765,21 @@
     }
 
     ul.exhibit-nav-level-3 > li > a:before {
-        content:" \2937 ";
+        content: " \21B5 ";
         position: relative;
-        top: -3px;
+        top: -1.5px;
+        right: 15px;
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        display: inline-block;
     }
 
     #exhibit-pages > nav li.current > a:before {
-        content: " \2605  ";
+        content: " \2605  ";        
+        font-size: 75%;
+        position: relative;
+        top: -2px;
     }
 
     ul.exhibit-nav-level-2 > li > a,
@@ -1911,6 +1929,9 @@
     .index-entries li {
         margin-left:1em;
         text-indent:-1em;
+    }
+    .index-entries.split,p.split {
+        margin-top:-1.5em;
     }
 
 
