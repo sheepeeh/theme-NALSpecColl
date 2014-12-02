@@ -1,3 +1,26 @@
+<?php parse_str($_SERVER['QUERY_STRING'], $queryarray); ?>
+
+<?php if (array_key_exists('collection',$queryarray) && $queryarray['collection'] != ''): ?>
+
+  <?php
+  $db = get_db();
+  $collection = $db->getTable('Collection')->find($queryarray['collection']);
+  $collectionTitle = strip_formatting(metadata($collection, array('Dublin Core', 'Title')));
+  if ($collectionTitle == '') {
+    $collectionTitle = __('[Untitled]');
+  }
+  ?>
+
+  <h1><?php echo $collectionTitle; ?></h1>
+
+  <?php if ($description = metadata($collection, array('Dublin Core', 'Description'),array('index' => 0))): ?>
+    <?php echo $description; ?>
+  <?php endif; ?>
+  <?php if ($description = metadata($collection, array('Dublin Core', 'Description'),array('index' => 1))): ?>
+    <?php echo $description; ?>
+  <?php endif; ?>
+<?php endif; ?>
+
 <?php
 if (!empty($formActionUri)):
     $formAttributes['action'] = $formActionUri;

@@ -783,37 +783,172 @@
         margin: 0px 0.75em;
         float:left;
     }
+
+/* Styles for Agent Orange "container list */
+
+    .ao-thumb, .ao-no-thumb {
+      width:15%;
+      float: left;
+      margin: 0px 0.75em 0.75em 0px;
+      padding: 0px;  
+    }
+
+    .ao-no-thumb {
+      border:1px solid #ccc !important;
+      min-height:9em;
+    }
+
+    .ao-thumb img {
+      width:100%;
+    }
+    .ao-container {
+      min-width:3em;
+      height:100%;
+      float:left;
+      padding:0 0.5em;
+      vertical-align:top;
+    }
+
+    .ao-details p, .ao-container p {
+      margin-top:0em;
+    }
+
+    .ao-details {
+      width:66%;
+      float: right;
+      padding:0 0.5em;
+      vertical-align:top;
+      margin-top:0px;
+    }
+
+    .ao-details p {
+        margin-bottom:1em;
+    }
+
+    .ao-details h2 {
+      margin:0px 0px 1em 0px !important;
+      font-size: 1.2em;
+      font-weight: 500;
+      line-height: 1.3em;
+    }
+
+
+    .ao.item.hentry {
+      padding:1em !important;
+    }
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  #content .item-meta .item-img, #content .item-meta .item-img img{
+  #content .item-meta .item-img, #content .item-meta .item-img img, .ao-thumb img{
         clear:both !important; 
         display:block !important;
         max-width:10em;      
     }
+
+    .ao-details, .ao-thumb {
+        width:100%;
+        clear:both;
+        float:none;
+    }
+
+    .ao-no-thumb {
+        clear:both;
+        float:none;
+        width:9em;
+    }
+
+    .ao-thumb {
+        text-align:center;    
+    }
+
+    .ao-container {
+        width:40%;
+    }
 }
 
 @media only screen and (max-width: 767px) {
-  #content .item-meta .item-img, #content .item-meta .item-img img{
+  #content .item-meta .item-img, #content .item-meta .item-img img, .ao-thumb img{
         clear:both !important;       
         display:block !important;      
         max-width:10em;      
     }
+
+
+    .ao-details,.ao-thumb {
+        width:100%;
+        clear:both;
+        float:none;
+    }
+
+    .ao-no-thumb {
+        clear:both;
+        float:none;
+        width:9em;
+    }
+
+    .ao-thumb {
+        text-align:center;    
+    }
+
+    .ao-container {
+        width:40%;
+    }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  #content .item-meta .item-img, #content .item-meta .item-img img{
+  #content .item-meta .item-img, #content .item-meta .item-img img, .ao-thumb img{
         clear:both !important;
         display:block !important;      
         width:100% !important;       
+    }
+
+
+    .ao-details, .ao-thumb {
+        width:100%;
+        clear:both;
+        float:none;
+    }
+    
+    .ao-no-thumb {
+        clear:both;
+        float:none;
+        width:9em;
+    }
+
+    .ao-thumb {
+        text-align:center;    
+    }
+
+    .ao-container {
+        width:40%;
     }
 }
 
 @media only screen and (max-width: 640px) {
-  #content .item-meta .item-img, #content .item-meta .item-img img{
+  #content .item-meta .item-img, #content .item-meta .item-img img, .ao-thumb img {
         clear:both !important;
         display:block !important;      
         width:100% !important;       
     }
 
+    .ao-thumb {
+        text-align:center;    
+    }
+
+    .ao-no-thumb {
+        clear:both;
+        float:none;
+        width:9em;
+    }
+
+    .ao-details, .ao-thumb {
+        width:100%;
+        clear:both;
+        float:none;
+    }
+
+    .ao-container {
+        width:40%;
+    }
 
 }
 
@@ -1484,6 +1619,7 @@
         -webkit-box-shadow: transparent 0 0 0;
            -moz-box-shadow: transparent 0 0 0;
                 box-shadow: transparent 0 0 0;
+        width: 75%;
     }
     .exhibits.show #content #exhibit-page-navigation a,
     .exhibits.show #content #exhibit-page-navigation span {
@@ -1786,7 +1922,7 @@
     }
 
     #exhibit-pages > nav li.current > a:before {
-        content: " \2605  ";        
+        content: "\2605";        
         font-size: 75%;
         position: relative;
         top: -2px;
@@ -1801,6 +1937,24 @@
         display:none;
     }
     
+    .two-links {
+        clear:both;
+        padding-bottom:2em;
+    }
+
+    .two-links span:first-of-type {
+        clear:left;
+        float:left;
+    }
+
+    .two-links span:nth-of-type(2) {
+        clear:right;
+        float:right;
+    }
+
+    .clear {
+        clear:both;
+    }
 
     #content .exhibit-item:empty {
         padding: 0;
@@ -1965,6 +2119,13 @@
         float:none;
         margin-bottom: 1em;
     }
+
+    .layout-file-text .exhibit-items {
+        max-width: 100%;
+        float:none !important;
+        clear:both !important;
+		margin:2% !important;
+    }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -1976,6 +2137,12 @@
         float:none;
         margin-bottom: 1em;
     }
+    .layout-file-text .exhibit-items {
+        max-width: 100%;
+        float:none !important;
+        clear:both !important;
+		margin:2% !important;
+    }
 }
 
 @media only screen and (max-width: 640px) {
@@ -1986,6 +2153,12 @@
         width:100% !important;
         float:none;
         margin-bottom: 1em;
+    }
+    .layout-file-text .exhibit-items {
+        max-width: 100%;
+        float:none !important;
+        clear:both !important;
+		margin:2% !important;
     }
 
 }
@@ -2066,6 +2239,7 @@
     .advanced-search .disclaimer {
         font-size: 80%;
         font-style: italic;
+        margin-top:-1em;
     }
 
     .winter a:link,

@@ -100,7 +100,10 @@
     
 
         var showITTerms = [    // This is a list of all of the Item Type metadata elements we want to display
-        'Original Format'
+        'Original Format',
+        'Box',
+        'Folder',
+        'Series'
        ];
     // Loop through the IT metadata elements in the HTML one by one
        var foundsww;

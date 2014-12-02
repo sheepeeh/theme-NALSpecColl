@@ -7,6 +7,10 @@
 
 <div id="primary">
 
+    <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files') == false): ?>
+        <div style="text-align:center;"><img src="/exhibits/speccoll/files/theme_uploads/fallback-file.png"></div>
+    <?php endif; ?>
+
     <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
         <?php $files = $item->Files; ?>
         <?php usort($files, 'filename_compare'); ?>
@@ -17,13 +21,7 @@
         } ?>
     <?php endif; ?>
     
-    <!-- The following prints a list of all tags associated with the item -->
-    <?php if (metadata('item', 'has tags')): ?>
-    <div id="item-tags" class="element">
-        <h2><?php echo __('Tags'); ?></h2>
-        <div class="element-text"><?php echo tag_string('item'); ?></div>
-    </div>
-    <?php endif;?>
+
 
     <!-- The following prints a citation for this item. -->
     <div id="item-citation" class="element">
