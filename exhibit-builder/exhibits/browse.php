@@ -51,7 +51,14 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
         <?php endif; ?>
     
 
-        <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true, 'snippet' => 750))): ?>
+        <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true, 'snippet' => 750))):
+
+            $exhibitDescription = preg_replace('/Search\sthis\sExhibit/' ,'', $exhibitDescription);
+            $exhibitDescription = preg_replace('/\[exhibit_search\s.*\]/' ,'', $exhibitDescription);
+            $exhibitDescription = preg_replace('/\[build_url.*\]/' ,'', $exhibitDescription);
+            $exhibitDescription = preg_replace('/View\sall\sitems\sin\sthis\sexhibit./' ,'', $exhibitDescription);
+            $exhibitDescription = preg_replace('/View\sall\sitems\sin\sthe.*\./' ,'', $exhibitDescription);
+         ?>
                 <div class="description"><?php echo $exhibitDescription; ?></div>
         <?php endif; ?>
     </div>
