@@ -42,6 +42,12 @@
         margin-left: 1%;
     }
 
+    #sub-links, #sub-links a {
+	border: none !important;
+	background-color:#fff !important;
+	color:#009 !important;
+   }
+
 
     #header div {
         margin-bottom:5px;
@@ -52,21 +58,14 @@
     #nal-logos,
     #search-container,
     #sub-nav-container,
-    #header_logo_site_info {
-        float: none;
+    #header_logo_site_info,
+    .header__secondary-menu {
+        float: none !important;
         clear: both;
 
-        width: 100%;
+        width: 95%;
 
         text-align: left;
-    }
-
-    header #advanced-search:after {
-        margin-top: -25%;
-    }
-
-    header #search-form input[type='submit'] {
-        width: 25%;
     }
 
     header  #advanced-search {
@@ -84,6 +83,12 @@
         margin-left: 1%;
     }
 
+    #sub-links, #sub-links a {
+	border: none !important;
+	background-color:#fff !important;
+	color:#009 !important;
+   }
+
     #header div {
         margin-bottom:5px;
     }
@@ -93,24 +98,18 @@
     #nal-logos,
     #search-container,
     #sub-nav-container,
-    #header_logo_site_info {
-        float: none;
+    #header_logo_site_info,
+    .header__secondary-menu {
+        float: none !important;
         clear: both;
 
-        width: 100%;
+        width: 95%;
 
         text-align: left;
-    }
-    header #advanced-search:after {
-        margin-top: -25%;
     }
 
     header  #advanced-search {
         margin-left: -2em;
-    }
-
-    header #search-form input[type='submit'] {
-        width: 25%;
     }
 
     .breadcrumbs, #site-title {
@@ -123,6 +122,12 @@
         width: 95%;
         margin-left: 1%;
     }
+
+    #sub-links, #sub-links a {
+	border: none !important;
+	background-color:#fff !important;
+	color:#009 !important;
+   }
 
     #header div {
         margin-bottom:5px;
@@ -137,27 +142,20 @@
     #nal-logos,
     #search-container,
     #sub-nav-container,
-    #header_logo_site_info {
-        float: none;
+    #header_logo_site_info,
+    .header__secondary-menu {
+        float: none !important;
         clear: both;
 
-        width: 100%;
+        width: 95%;
 
         text-align: left;
     }
-    header #advanced-search:after {
-        margin-top: -25%;
-    }
-
 
     header  #advanced-search {
         margin-left: -2em;
     }
 
-
-    header #search-form input[type='submit'] {
-        width: 25%;
-    }
 
     .breadcrumbs, #site-title {
         margin-left: 12px;
@@ -172,6 +170,12 @@
         margin-left: 1%;
     }
 
+    #sub-links, #sub-links a {
+	border: none !important;
+	background-color:#fff !important;
+	color:#009 !important;
+   }
+
     #header div {
         margin-bottom:5px;
     }
@@ -185,24 +189,18 @@
     #nal-logos,
     #search-container,
     #sub-nav-container,
-    #header_logo_site_info {
-        float: none;
+    #header_logo_site_info,
+    .header__secondary-menu {
+        float: none !important;
         clear: both;
 
-        width: 100%;
+        width: 95%;
 
         text-align: left;
-    }
-    header   #advanced-search:after {
-        margin-top: -25%;
     }
 
     header  #advanced-search {
         margin-left: -2em;
-    }
-
-    header #search-form input[type='submit'] {
-        width: 25%;
     }
 
     .breadcrumbs, #site-title {
@@ -293,7 +291,7 @@
 
 #sub-links li a {
     text-decoration: none;
-
+    padding: 0px 0.15em;
     color: #fff;
 }
 
@@ -319,6 +317,7 @@
 
 #ask:after {
     content: ' a Question';
+    padding-right:0.15em;
 }
 
 #contact:after {

@@ -52,12 +52,24 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     
 
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true, 'snippet' => 750))):
+            $patterns = array('/Search\sthis\sExhibit/',
+                '/Search\sthis\sExhibit/',
+                '/\[exhibit_search\s.*\]/',
+                '/\[build_url.*\]/',
+                '/View\sall\sitems\sin\sthis\sexhibit./', 
+                '/View\sall\sitems\sin\sthe.*\./',
+                '/View\sall\sitems\sin\sthe.*\./'
+                );
 
-            $exhibitDescription = preg_replace('/Search\sthis\sExhibit/' ,'', $exhibitDescription);
-            $exhibitDescription = preg_replace('/\[exhibit_search\s.*\]/' ,'', $exhibitDescription);
-            $exhibitDescription = preg_replace('/\[build_url.*\]/' ,'', $exhibitDescription);
-            $exhibitDescription = preg_replace('/View\sall\sitems\sin\sthis\sexhibit./' ,'', $exhibitDescription);
-            $exhibitDescription = preg_replace('/View\sall\sitems\sin\sthe.*\./' ,'', $exhibitDescription);
+            $exhibitDescription = preg_replace($patterns ,'', $exhibitDescription);
+
+            $words = explode(' ',trim($exhibitDescription));
+            $words2 = explode("\r\n",trim($words[0]));
+
+            if ($words2[0] == "Introduction") { 
+                $exhibitDescription = preg_replace('/Introduction/','', $exhibitDescription,1);
+            }
+
          ?>
                 <div class="description"><?php echo $exhibitDescription; ?></div>
         <?php endif; ?>
