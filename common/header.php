@@ -35,10 +35,15 @@
     <?php queue_js_file('jquery-extra-selectors'); ?>
     <?php queue_js_file('vendor/respond'); ?>
     <?php queue_js_file('globals'); ?>
-    <?php queue_js_file('ga'); ?>
-    
-    <!-- Uncomment when pushing to upstream -->
-    <!-- <?php queue_js_url('//www.nal.usda.gov/sites/all/themes/gatag.js'); ?> -->
+	<?php if ($_SERVER['SERVER_NAME'] == 'www.nal.usda.gov') {
+	    queue_js('//www.nal.usda.gov/sites/all/themes/ga.js');
+	} ?>
+
+	    
+	<?php if ($_SERVER['SERVER_NAME'] == 'www.nal.usda.gov') {
+	    queue_js_url('//www.nal.usda.gov/sites/all/themes/gatag.js');
+	} ?>
+
 
     <?php echo head_js(); ?>
 </head>
