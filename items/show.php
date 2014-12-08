@@ -8,7 +8,7 @@
 <div id="primary">
 
     <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files') == false): ?>
-        <div style="text-align:center;"><img src="/exhibits/speccoll/files/theme_uploads/fallback-file.png"></div>
+        <div style="text-align:center;"><p style="text-align:center;padding:10%;margin: 5% 25%; border:2px solid #ccc;"><em><strong>No file available</strong><br />Please <a href="http://specialcollections.nal.usda.gov/contact-us-0" target="_blank">contact Special Collections</a> for more information.</em></p></div>
     <?php endif; ?>
 
     <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
@@ -19,6 +19,7 @@
             } else {
                 echo file_markup($files, array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image for the first content page of the item, linking to the full file.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
         } ?>
+
     <?php endif; ?>
     
 
