@@ -265,11 +265,6 @@ function custom_paging() {
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
                 //Get an array of the items from the query.
                 $list = get_db()->getTable('Item')->findBy($queryarray);
                 foreach ($list as $value) {
@@ -285,11 +280,6 @@ function custom_paging() {
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
                 //Get an array of the items from the query.
                 $list = get_db()->getTable('Item')->findBy($queryarray);
                 foreach ($list as $value) {
@@ -305,11 +295,6 @@ function custom_paging() {
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
                 //Get an array of the items from the query.
                 $list = get_db()->getTable('Item')->findBy($queryarray);
                 foreach ($list as $value) {
@@ -325,11 +310,6 @@ function custom_paging() {
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
                 //Get an array of the items from the query.
                 $list = get_db()->getTable('Item')->findBy($queryarray);
                 foreach ($list as $value) {
@@ -345,11 +325,6 @@ function custom_paging() {
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
                 //Get an array of the items from the query.
                 $list = get_db()->getTable('Item')->findBy($queryarray);
                 foreach ($list as $value) {
@@ -365,11 +340,6 @@ function custom_paging() {
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
                 //Get an array of the items from the query.
                 $list = get_db()->getTable('Item')->findBy($queryarray);
                 foreach ($list as $value) {
@@ -385,11 +355,6 @@ function custom_paging() {
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
                 //Get an array of the items from the query.
                 $list = get_db()->getTable('Item')->findBy($queryarray);
                 foreach ($list as $value) {
@@ -398,6 +363,51 @@ function custom_paging() {
                 }
 
         }
+
+         //Browsing exhibit 13 items
+        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/usda-history-collection') != false) {
+            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=13&submit_search=Search&sort_field=Dublin+Core%2CDate";
+            parse_str($exhibit_query, $queryarray);
+            unset($queryarray['page']);
+
+                //Get an array of the items from the query.
+                $list = get_db()->getTable('Item')->findBy($queryarray);
+                foreach ($list as $value) {
+                        $itemIds[] = $value->id;
+                        $list[] = $value;
+                }
+
+        }
+
+         //Browsing exhibit 14 items
+        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/alvin-l--young-collection-on-a') != false) {
+            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=14&submit_search=Search&sort_field=Dublin+Core%2CDate";
+            parse_str($exhibit_query, $queryarray);
+            unset($queryarray['page']);
+
+                //Get an array of the items from the query.
+                $list = get_db()->getTable('Item')->findBy($queryarray);
+                foreach ($list as $value) {
+                        $itemIds[] = $value->id;
+                        $list[] = $value;
+                }
+
+        }
+
+        //Browsing exhibit 15 items
+        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/stop-screwworms--selections-fr') != false) {
+            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=15&submit_search=Search&sort_field=Dublin+Core%2CDate";
+            parse_str($exhibit_query, $queryarray);
+            unset($queryarray['page']);
+
+                //Get an array of the items from the query.
+                $list = get_db()->getTable('Item')->findBy($queryarray);
+                foreach ($list as $value) {
+                        $itemIds[] = $value->id;
+                        $list[] = $value;
+                }
+
+        }                
 
         //Browsing all items in general
         else
@@ -415,7 +425,7 @@ function custom_paging() {
 
         //Update the query string without the page and with the sort_fields
         $updatedquery = http_build_query($queryarray);
-        $updatedquery = preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', $updatedquery);
+
 
         // Find where we currently are in the result set
         $key = array_search($current, $itemIds);
