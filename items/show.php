@@ -38,7 +38,7 @@
 				echo file_markup($files, array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image for the first content page of the item, linking to the full file.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
 			} ?>
 
-			</div>
+
 		<?php endif; ?>
 	<?php endif; ?>
 
