@@ -1266,6 +1266,9 @@
     .items.show h3 {
         margin-bottom: 0;
     }
+   .items.show .element-set > .element:first-child > h3:first-child {
+        margin-top:0px;
+    }
     .items.show #itemfiles #item-images > div {
         display: inline-block;
 
