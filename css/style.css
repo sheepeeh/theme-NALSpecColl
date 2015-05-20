@@ -1261,6 +1261,16 @@
         margin-bottom: 0;
     }
 
+    p.dropcap:first-letter {
+      color:#383838;
+      float: left; 
+      font-size: 5em; 
+      line-height: 1em; 
+      padding-top: 4px; 
+      padding-right: 8px; 
+      padding-left: 3px; 
+      font-family: Georgia;
+    }
 
     /* !---------- Items ---------- */
     .items.show h3 {
