@@ -12,11 +12,11 @@ echo head(array(
 	<nav>
 		<?php echo exhibit_builder_page_nav_side(); ?>
 	</nav>
-		<?php nal_exhibit_builder_render_exhibit_sidebar(); ?>
+		<?php NALLayoutsPlugin::nal_exhibit_builder_render_exhibit_sidebar(); ?>
 </div>
 
 <div role="main" class="primary">
-    <?php nal_exhibit_builder_render_exhibit_page(); ?>
+    <?php NALLayoutsPlugin::nal_exhibit_builder_render_exhibit_page(); ?>
 </div>
 
 
