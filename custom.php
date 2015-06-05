@@ -204,7 +204,7 @@ function custom_paging() {
             $exhibit_slug = preg_replace('/(.*)(exhibits\/show\/)(\w*)(.*)/', "$3", $_SERVER['HTTP_REFERER']);
             $exhibit = get_db()->getTable('Exhibit')->findBySlug($exhibit_slug);
 
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=$exhibit['id']&submit_search=Search&sort_field=Dublin+Core%2CDate";
+            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=" . $exhibit['id'] . "&submit_search=Search&sort_field=Dublin+Core%2CDate";
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
