@@ -50,6 +50,20 @@
 		<div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
 	</div>
 
+	<?php if ($transcription = metadata('item', array('Item Type Metadata', 'Transcription'))): ?>
+		<div id="text-item-type-metadata-transcription" class="element">
+			<h2><?php echo __('Transcription'); ?></h2>
+			<div class="element-text"><?php echo $transcription; ?></div>
+		</div>
+	<?php endif; ?>
+
+	<?php if ($biography = metadata('item', array('Item Type Metadata', 'Biographical Text'))): ?>
+		<div id="person-item-type-metadata-biography" class="element">
+			<h2><?php echo __('Biography'); ?></h2>
+			<div class="element-text"><?php echo $biography; ?></div>
+		</div>
+	<?php endif; ?>
+
 	<?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 </div><!-- end primary -->
