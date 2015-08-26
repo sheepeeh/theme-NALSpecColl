@@ -8,7 +8,7 @@
 <div id="primary">
 
 	<?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files') == false): ?>
-		<div style="text-align:center;"><p style="text-align:center;padding:10%;margin: 5% 25%; border:2px solid #ccc;"><em><strong>No file available</strong><br />Please <a href="http://specialcollections.nal.usda.gov/contact-us-0" target="_blank">contact Special Collections</a> for more information.</em></p></div>
+		<div style="text-align:center;"><p style="text-align:center;padding:10%;margin: 5% 20%; border:2px solid #ccc;"><strong>No <em>digital</em> file available.</strong><br />Please <a href="http://specialcollections.nal.usda.gov/contact-us" alt="Link to contact form." target="_blank">contact Special Collections</a> for access.</p></p></div>
 	<?php endif; ?>
 
 	<?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>

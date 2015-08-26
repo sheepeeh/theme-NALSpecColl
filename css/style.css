@@ -1663,6 +1663,10 @@
     .exhibits.show #content .exhibit-item {
         padding-top: 0;
     }
+    .exhibit-item > iframe {
+        max-height:400px !important;
+    }
+
     .exhibits.show #content #exhibit-page-navigation {
         padding: 0;
 
