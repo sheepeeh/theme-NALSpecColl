@@ -17,9 +17,7 @@
 		<?php if (count($files) > 1): ?>
 			<?php if (metadata('item','item_type_id') == 6) {
 				echo file_markup($files[0], array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
-
 			} elseif (metadata($files[0], 'MIME Type') == 'aplication/pdf' && metadata($files[0], 'size') < 10000) {
-
 				$html = '<div class="item-file">';
 				$html += "<h2>" . metadata($files[0], 'size') . "</h2>";
 				$html += '<a href="';
@@ -29,14 +27,11 @@
 				$image = file_image('fullsize', array(alt => '"Thumbnail for the first (or only) page of "' . metadata('item', array('Dublin Core', 'Title')) . '"'), $files[0]);
 				$html += $image;
 				$html += "</a></div>";  					
-
 				echo $html;
 				unset($html);
-				
 			} else {
 				echo file_markup($files[0], array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image for the first content page of the item, linking to the full file.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
 			} 
-
 			unset($files[0]);
 			?>
 
@@ -45,32 +40,30 @@
 				<?php if (metadata('item','item_type_id') == 6) {
 					echo file_markup($files, array('imageSize' => 'thumbnail', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
 				} else {
-					echo file_markup($files, array('imageSize' => 'thumbnail', 'imgAttributes'=>array('alt'=>'Image for the first content page of the item, linking to the full file.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
-				} ?>
-			</div>
-		<?php else: ?>
-			<?php if (metadata('item','item_type_id') == 6) {
-				echo file_markup($files, array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
-			} else {
-
-				if (metadata($files[0], 'size') > 10000000 && metadata($files[0], 'MIME Type') == "application/pdf") {
-					echo "<div class=\"item-file\">";
-					echo "<p><strong>This PDF is too  large to display. Click on the image below to view the PDF.</strong></p>";
-					echo "<a href=\"" . $files[0]->getWebPath('original') .  '" title="' . metadata('item', array('Dublin Core', 'Title')) . '" alt="View the PDF.">'. file_image('fullsize', array(alt => 'Thumbnail for the first (or only) page of ' . metadata('item', array('Dublin Core', 'Title'))), $files[0]) . "</a></div>";	
-
+					foreach($files as $file) {
+						echo "<div class=\"item-file\">";
+						echo "<a class==\"download-file\" href=\"" . $file->getWebPath('original') .  '" title="' . metadata('item', array('Dublin Core', 'Title')) . '" alt="View the full-size file.">'. file_image('thumbnail', array(alt => 'Thumbnail of an additional file for this item.'), $file) . "</a></div>";	
+					}} ?>
+				</div>
+			<?php else: ?>
+				<?php if (metadata('item','item_type_id') == 6) {
+					echo file_markup($files, array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
 				} else {
-					echo file_markup($files[0], array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image for the first content page of the item, linking to the full file.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
+					
+					if (metadata($files[0], 'size') > 10000000 && metadata($files[0], 'MIME Type') == "application/pdf") {
+						echo "<div class=\"item-file\">";
+						echo "<p><strong>This PDF is too  large to display. Click on the image below to view the PDF.</strong></p>";
+						echo "<a href=\"" . $files[0]->getWebPath('original') .  '" title="' . metadata('item', array('Dublin Core', 'Title')) . '" alt="View the PDF.">'. file_image('fullsize', array(alt => 'Thumbnail for the first (or only) page of ' . metadata('item', array('Dublin Core', 'Title'))), $files[0]) . "</a></div>";	
+						
+					} else {
+						echo file_markup($files[0], array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image for the first content page of the item, linking to the full file.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
+					}
+					
+				} 
+				unset($files[0]); ?>
 
-				}
-
-
-			} 
-			unset($files[0]); ?>
-
-
+			<?php endif; ?>
 		<?php endif; ?>
-	<?php endif; ?>
-
 
 
 	<!-- The following prints a citation for this item. -->
