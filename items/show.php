@@ -115,9 +115,11 @@
 	<?php echo link_to_related_exhibits($item); ?>
 
 
-	<div id="previous-page">
-		<?php echo to_previous() ?>
-	</div>
+	<?php if ($_SERVER['HTTP_REFERER']): ?>
+		<div id="previous-page">
+			<?php echo to_previous() ?>
+		</div>
+	<?php endif; ?>
 </aside>
 
 <ul class="item-pagination navigation">
