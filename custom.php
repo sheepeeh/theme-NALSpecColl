@@ -113,7 +113,7 @@ function link_to_related_exhibits($item) {
     $db = get_db();
 
     $select = "
-    SELECT e.* FROM {$db->prefix}exhibits AS e
+    SELECT e.id as exhibit_id, e.title as exhibit_title, e.slug as exhibit_slug, ep.title as page_title, ep.slug as page_slug, ep.id as page_id FROM {$db->prefix}exhibits AS e
     INNER JOIN {$db->prefix}exhibit_pages AS ep on ep.exhibit_id = e.id
     INNER JOIN {$db->prefix}exhibit_page_blocks AS epb ON epb.page_id = ep.id
     INNER JOIN {$db->prefix}exhibit_block_attachments AS epba ON epba.block_id = epb.id
@@ -125,9 +125,11 @@ function link_to_related_exhibits($item) {
         $inlist = array();
         echo '<div id="exhibits" class="element"><h2>Appears in Exhibits</h2>';
         foreach($exhibits as $exhibit) {
-            if (!in_array($exhibit->slug, $inlist)) {
-                echo '<div class="element-text"><a href="' . url('/exhibits/show/') . $exhibit->slug . '">'.$exhibit->title.'</a></div>';
-                array_push($inlist, $exhibit->slug);
+            if (!in_array($exhibit->exhibit_slug, $inlist)) {
+                $page = get_record_by_id('Exhibit Page', $exhibit->page_id);
+                $real_exhibit = get_record_by_id('Exhibit', $exhibit->exhibit_id);
+                echo '<div class="element-text"><a href="' . html_escape(exhibit_builder_exhibit_uri($real_exhibit, $page)) . '">'.$exhibit->exhibit_title.'</a></div>';
+                array_push($inlist, $exhibit->exhibit_slug);
             }
         }
         echo '</div>';
@@ -151,10 +153,11 @@ function to_previous() {
               echo '<p><a href="' . $referer . '" title="Return to the previous page">&larrhk; Back to Item</a></p>';
            } elseif (strpos($referer, 'items/browse') != false) {
               echo '<p><a href="' . $referer . '" title="Return to the previous page">&larrhk; Back to Search Results</a></p>';
-           }   
+           }   else {
+              echo '<p><a href="' . $referer . '" title="Return to the previous page">&larrhk; Back to Previous Page</a></p>';
         }
     }
-
+}
 
 // Base pagination on search results
 function custom_paging() {
