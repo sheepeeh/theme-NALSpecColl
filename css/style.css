@@ -40,6 +40,12 @@
         text-decoration: none;
     }
 
+    #content > #primary a,
+    .element-text a,
+    .item-meta a {
+        text-decoration: underline
+    }
+
     /* !---------- Headings ---------- */
     h1 {
         font-size: 1.6em;
