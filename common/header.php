@@ -56,9 +56,9 @@
                         <nav class="header__secondary-menu" id="sub-links" role="navigation">
                         <ul id="secondary-menu-sub-links" class="links inline clearfix">
                         <li class="menu-432 first"><a href="http://www.nal.usda.gov/ask-question" title="Ask a Question" id="ask" target="_blank">Ask</a></li>
-                        <li class="menu-433"><a target="_blank" href="http://www.nal.usda.gov/contact-us" title="Contact Us" id="contact" target="_blank">Contact</a>
+                        <li class="menu-433"><a target="_blank" href="https://www.nal.usda.gov/contact-us" title="Contact Us" id="contact" target="_blank">Contact</a>
                         </li>
-                        <li class="menu-434 last"><a target="_blank" href="http://www.nal.usda.gov/visit-library" title="Visit the Library" id="visit" target="_blank">Visit</a>
+                        <li class="menu-434 last"><a target="_blank" href="https://www.nal.usda.gov/visit-library" title="Visit the Library" id="visit" target="_blank">Visit</a>
                         </li>
                         </ul>
                         </nav>
@@ -69,7 +69,7 @@
                    <div id="header_logo_site_info">
     
                         <div class="logo-col">
-                             <a href="/" title="United States Department of Agriculture" class="header__logo" id="logo"><img src="http://www.nal.usda.gov/sites/all/themes/nal/images/usdalogocolor.png" alt="United States Department of Agriculture" class="header__logo-image"></a>
+                             <a href="/" title="United States Department of Agriculture" class="header__logo" id="logo"><img src="https://www.nal.usda.gov/sites/all/themes/nal/images/usdalogocolor.png" alt="United States Department of Agriculture" class="header__logo-image"></a>
                         </div>
 
                         <div class="header__name-and-slogan" id="name-and-slogan">
@@ -94,7 +94,7 @@
                 </header>
             <!-- End NAL main header -->         
          <!-- Bread crumbs -->
-            <div class="breadcrumbs"> <a href="http://www.nal.usda.gov">National Agricultural Library</a> &gt; <a href="http://specialcollections.nal.usda.gov/" title="Special Collections at the National Agricultural Library">Special Collections</a> &gt; Exhibits</div>
+            <div class="breadcrumbs"> <a href="https://www.nal.usda.gov">National Agricultural Library</a> &gt; <a href="http://specialcollections.nal.usda.gov/" title="Special Collections at the National Agricultural Library">Special Collections</a> &gt; Exhibits</div>
             <div>
                 <div id="site-title">
                     <?php echo link_to_home_page(theme_logo()); ?>
