@@ -2,7 +2,7 @@
 // Imports
 
 @import "compass";
-@import "susy";
+@import "susyone";
 @import "mixins";
 
 // ---------------------------------------------------------------------------
@@ -24,14 +24,18 @@ $break          : 50em 16;
     $winter-light-gray: #dfe2e2;
     $winter-dark-gray: #5a5a5a;
     $winter-title-blue: #859ca2;
-    $winter-slate: #4b6569;
+    $winter-slate: #0d233c;
     $winter-blue-on-pale-blue: #def9ff;
-    $winter-bright-blue: #56ACBA;
-    $winter-hover-blue: #3acacc;
+    $winter-bright-blue: rgb(34,40,159);
+    $winter-hover-blue: rgb(0, 93, 255);
     $winter-pale-blue: #98c4c9;
-    $winter-footer-blue: #2f3e4a;
+    $winter-footer-blue: #0d233c;
     $winter-off-white: #f8f8f8;
-
+    $winter-white: #fff;
+    $winter-dark-blue: #0d233c;
+    $winter-nav-current: rgb(171,186,207);
+    $winter-title-blue: rgb(107, 123, 173);
+    
     // ---------------------------------------------------------------------
     // Spring colors
     
