@@ -37,14 +37,13 @@
     }
 
     a {
-        text-decoration: none;
+        text-decoration: underline;
     }
 
-    #content > #primary a,
-    .element-text a,
-    .item-meta a {
-        text-decoration: underline
+    nav a {
+    	text-decoration: none;
     }
+
 
     /* !---------- Headings ---------- */
     h1 {

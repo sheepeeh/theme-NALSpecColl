@@ -16,7 +16,7 @@
 		<?php if (count($files) > 1): ?>
 			<?php if (metadata('item','item_type_id') == 6) {
 				echo file_markup($files[0], array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
-			} elseif (metadata($files[0], 'MIME Type') == 'aplication/pdf' && metadata($files[0], 'size') < 10000 || isMobile()) {
+			} elseif (metadata($files[0], 'MIME Type') == 'application/pdf' && metadata($files[0], 'size') < 10000 ||  metadata($files[0], 'MIME Type') == "application/pdf" && isMobile()) {
 				$html = '<div class="item-file">';
 				$html += "<h2>" . metadata($files[0], 'size') . "</h2>";
 				$html += '<a href="';
@@ -49,7 +49,7 @@
 					echo file_markup($files, array('imageSize' => 'fullsize', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
 				} else {
 					
-					if (metadata($files[0], 'size') > 10000000 && metadata($files[0], 'MIME Type') == "application/pdf" || isMobile()) {
+					if (metadata($files[0], 'size') > 10000000 && metadata($files[0], 'MIME Type') == "application/pdf" ||  metadata($files[0], 'MIME Type') == "application/pdf" && isMobile()) {
 						echo "<div class=\"item-file\">";
 						echo "<p><strong>This PDF is too  large to display. Click on the image below to view the PDF.</strong></p>";
 						echo "<a href=\"" . $files[0]->getWebPath('original') .  '" title="' . metadata('item', array('Dublin Core', 'Title')) . '" alt="View the PDF.">'. file_image('fullsize', array(alt => 'Thumbnail for the first (or only) page of ' . metadata('item', array('Dublin Core', 'Title'))), $files[0]) . "</a></div>";	
