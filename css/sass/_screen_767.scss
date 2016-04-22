@@ -1,0 +1,28 @@
+.exhibits #content .primary,
+.show #exhibit-pages {
+    clear:both !important; 
+    display:block !important;      
+    width:100% !important;
+    float:none;
+    margin-bottom: 1em;
+}
+
+.layout-file-text .exhibit-items {
+    max-width: 100%;
+    float:none !important;
+    clear:both !important;
+    margin:2% !important;
+}
+
+select {
+    max-width: 100%;
+}
+
+#secondary-files > div, #secondary-files > .item-file {
+    display: block;
+    padding: 1.5%;
+    margin-bottom: 0.5em;
+    text-align: center;
+    vertical-align: top;        
+}
+

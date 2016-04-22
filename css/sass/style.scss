@@ -9,3 +9,13 @@
 @media screen and (min-width: 768px) {
     @import "screen_768"; 
 }
+
+// Less than 768px -----------------------------------------------------------
+@media only screen and (max-width: 767px) {
+	@import "screen_767"
+}
+
+// 768px up to 959px ---------------------------------------------------------
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	@import "screen_959"
+}

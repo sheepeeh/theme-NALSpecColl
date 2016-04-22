@@ -56,7 +56,7 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
             <?php else: ?>
 
               <div class="ao-no-thumb">
-                <p style="text-align:center;padding:20%; color:#aaa;">No File Available</p>
+                <p style="text-align:center; color:#aaa;">No <em>digital</em> file available.<br />Please <a href="http://specialcollections.nal.usda.gov/contact-us" alt="Link to contact form." target="_blank">contact Special Collections</a> for access.</p>
 
               <?php endif; ?>
             </div>
@@ -176,7 +176,7 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
               <?php else: ?>
 
                 <div class="ao-no-thumb">
-                  <p style="text-align:center;padding:20%; color:#aaa;">No File Available</p>
+                  <p style="text-align:center;padding:20%; color:#aaa;">No <em>digital</em> file available. Please contact Special Collections for access.</p>
 
                 <?php endif; ?>
               </div>
@@ -257,7 +257,7 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
               <?php else: ?>
 
                 <div class="ao-no-thumb">
-                  <p style="text-align:center;padding:20%; color:#aaa;">No File Available</p>
+                  <p style="text-align:center;padding:20%; color:#aaa;">No <em>digital</em> file available. Please contact Special Collections for access.</p>
 
                 <?php endif; ?>
               </div>

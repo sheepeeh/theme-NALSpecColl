@@ -1,5 +1,5 @@
 <form id="search-form" name="search-form" action="<?php echo url("/items/browse"); ?>" method="get">    
-    <input type="text" name="search" id="query" value="" title="Search" placeholder="Enter keyword.">        
+    <input type="text" name="search" id="query" value="" title="Search" placeholder="Search all items.">        
     <fieldset id="advanced-form" title="advanced search fields">
         <div id="search-narrow-by-fields" class="field">
             <div class="label"><?php echo __('<label for="advanced-0-element_id">Narrow by Specific Field</label>'); ?></div>

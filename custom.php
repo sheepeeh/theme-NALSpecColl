@@ -113,7 +113,7 @@ function link_to_related_exhibits($item) {
     $db = get_db();
 
     $select = "
-    SELECT e.* FROM {$db->prefix}exhibits AS e
+    SELECT e.id as exhibit_id, e.title as exhibit_title, e.slug as exhibit_slug, ep.title as page_title, ep.slug as page_slug, ep.id as page_id FROM {$db->prefix}exhibits AS e
     INNER JOIN {$db->prefix}exhibit_pages AS ep on ep.exhibit_id = e.id
     INNER JOIN {$db->prefix}exhibit_page_blocks AS epb ON epb.page_id = ep.id
     INNER JOIN {$db->prefix}exhibit_block_attachments AS epba ON epba.block_id = epb.id
@@ -125,9 +125,11 @@ function link_to_related_exhibits($item) {
         $inlist = array();
         echo '<div id="exhibits" class="element"><h2>Appears in Exhibits</h2>';
         foreach($exhibits as $exhibit) {
-            if (!in_array($exhibit->slug, $inlist)) {
-                echo '<div class="element-text"><a href="' . url('/exhibits/show/') . $exhibit->slug . '">'.$exhibit->title.'</a></div>';
-                array_push($inlist, $exhibit->slug);
+            if (!in_array($exhibit->exhibit_slug, $inlist)) {
+                $page = get_record_by_id('Exhibit Page', $exhibit->page_id);
+                $real_exhibit = get_record_by_id('Exhibit', $exhibit->exhibit_id);
+                echo '<div class="element-text"><a href="' . html_escape(exhibit_builder_exhibit_uri($real_exhibit, $page)) . '">'.$exhibit->exhibit_title.'</a></div>';
+                array_push($inlist, $exhibit->exhibit_slug);
             }
         }
         echo '</div>';
@@ -151,10 +153,11 @@ function to_previous() {
               echo '<p><a href="' . $referer . '" title="Return to the previous page">&larrhk; Back to Item</a></p>';
            } elseif (strpos($referer, 'items/browse') != false) {
               echo '<p><a href="' . $referer . '" title="Return to the previous page">&larrhk; Back to Search Results</a></p>';
-           }   
+           }   else {
+              echo '<p><a href="' . $referer . '" title="Return to the previous page">&larrhk; Back to Previous Page</a></p>';
         }
     }
-
+}
 
 // Base pagination on search results
 function custom_paging() {
@@ -200,8 +203,11 @@ function custom_paging() {
                 }
         }
         //Browsing exhibit 2 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/poster-collections') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=2&submit_search=Search&sort_field=Dublin+Core%2CDate";
+        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/') != false) {
+            $exhibit_slug = preg_replace('/(.*)(exhibits\/show\/)(\w*)(.*)/', "$3", $_SERVER['HTTP_REFERER']);
+            $exhibit = get_db()->getTable('Exhibit')->findBySlug($exhibit_slug);
+
+            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=" . $exhibit['id'] . "&submit_search=Search&sort_field=Dublin+Core%2CDate";
             parse_str($exhibit_query, $queryarray);
             unset($queryarray['page']);
 
@@ -216,197 +222,6 @@ function custom_paging() {
                         $itemIds[] = $value->id;
                         $list[] = $value;
                 }
-
-        }
-
-        //Browsing exhibit 3 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/smokey-bear') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=3&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-             if (!array_key_exists('sort_field', $queryarray))
-                {
-                        $queryarray['sort_field'] = 'added';
-                        $queryarray['sort_dir'] = 'd';
-                }
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 4 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/popcorn') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=4&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-             // if (!array_key_exists('sort_field', $queryarray))
-             //    {
-             //            $queryarray['sort_field'] = 'added';
-             //            $queryarray['sort_dir'] = 'd';
-             //    }
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 5 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/the-american-dairy-industry') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=5&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 6 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/an-illustrated-expedition') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=6&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 7 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/frank-meyer') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=7&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 8 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/small-exhibits') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=8&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-       //Browsing exhibit 9 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/rare-books') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=9&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 10 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/nusery-and-seed-trade-catalog') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=10&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 11 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/manuscript-collections') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=11&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-         //Browsing exhibit 13 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/usda-history-collection') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=13&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-         //Browsing exhibit 14 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/alvin-l--young-collection-on-a') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=14&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
-        }
-
-        //Browsing exhibit 15 items
-        elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/stop-screwworms--selections-fr') != false) {
-            $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=15&submit_search=Search&sort_field=Dublin+Core%2CDate";
-            parse_str($exhibit_query, $queryarray);
-            unset($queryarray['page']);
-
-                //Get an array of the items from the query.
-                $list = get_db()->getTable('Item')->findBy($queryarray);
-                foreach ($list as $value) {
-                        $itemIds[] = $value->id;
-                        $list[] = $value;
-                }
-
         }                
 
         //Browsing all items in general
@@ -485,4 +300,13 @@ function searchPages($arr,$field,$value)
        }
        return $vals;
     }
+
+// Test for mobile browser
+// from https://github.com/nengineer/isMobile/blob/master/README.md
+
+function isMobile() {
+    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+}
+
 ?>
+
