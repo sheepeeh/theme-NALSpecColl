@@ -47,7 +47,7 @@ nav.top {
             a { padding: rhythm(.5) 16px; }
             
             &:hover {
-                background-color:rgba(0,0,0,.05);
+                background-color:rgba(0,0,0,.25);
                 & > ul { display: block; }
             }
 
@@ -221,7 +221,7 @@ header, nav.top, #content, footer {
 .exhibits.summary {
     #primary { 
         @include span-columns(8 alpha, 12); 
-        padding: 0 16px;
+        padding: 0 16px rhythm();
     }
 
     #exhibit-pages { 

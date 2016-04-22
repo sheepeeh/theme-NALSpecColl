@@ -126,6 +126,34 @@ fieldset {
   padding: 0;
 }
 
+    /* !---------- Tables ---------- */
+    /* NEW IN 2.2 */
+    
+    table {
+        width: 100%;
+        margin: rhythm() 0;
+        
+        caption {
+            text-align: left;
+            font-style: italic;
+        }
+    }
+
+    td,
+    th {
+        text-align: left;
+        border-color: rgba(0,0,0,.2);
+        padding: rhythm(.25);
+    }
+    
+    td {
+        @include trailing-border(1px, .25, $base-font-size, solid);
+    }
+    
+    th {
+        @include trailing-border(5px, .25, $base-font-size, solid);
+    }
+
 /* !---------- Global classes ---------- */
 
 .container {
@@ -236,6 +264,7 @@ nav {
     
     .current, .active { 
         font-weight: 500; 
+        text-transform: uppercase;
     }
     
     ul { 
@@ -270,6 +299,7 @@ nav {
         padding-right: 5px !important;
         @include rhythm-borders(1px, 0, $base-font-size, solid);
         @include box-shadow(rgba(0,0,0,.15) 0 0 10px);
+        @include trailer(); /* NEW IN 2.2 */
     }
 }
 
@@ -528,7 +558,7 @@ footer {
     padding: rhythm(1) 16px;
     @include pie-clearfix();
 
-    h1 {
+    & > h1 {
         font-size:1.5 * $base-font-size; 
         line-height: 2 * $base-line-height;
         text-transform: uppercase;
@@ -537,8 +567,9 @@ footer {
         margin: 0;
     }
 
-    & > h2, & > div > h2, #primary > h2, #primary > div > h2,
-    #sidebar > h2, #sidebar > div > h2 {
+    & > h2:first-child, & > div > h2:first-child, 
+    #primary > h2:first-child, #primary > div > h2:first-child,
+    #sidebar > h2:first-child, #sidebar > div > h2:first-child {
         padding: 0 16px rhythm(.25);
         font-weight: 500;
         border-style: solid;
@@ -717,9 +748,7 @@ div.hTagcloud {
 
     h1:first-child { margin-top: 0; }
     
-    & > * { padding: 0; }
-    
-    & > ul, & > ol { padding-left: 1em; }
+    & > ul, & > ol { padding-left: 1.5em; }
 }
 
 /* !---------- Home ---------- */
@@ -1087,11 +1116,31 @@ div.hTagcloud {
     &.summary #content {
         h1 { @include trailer(.5); }
 
+
         #primary > div {
             @include block-reset; 
             
             &:last-child { margin-bottom: 0; }
         }
+    }
+
+    &.summary #exhibit-pages > ul > li:not(:last-of-type) {
+        border-color: $winter-light-gray;
+        @include trailing-border(1px, 0, $base-font-size, solid);
+    }
+    
+    &.summary #exhibit-pages a { margin: rhythm(.25) 0; }
+    
+    &.show #exhibit-pages li a {
+        max-width: 100%;
+        height: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    
+    &.show #exhibit-pages li {
+        max-width: 40%;
     }
 
     &.show #content { 
@@ -1147,24 +1196,30 @@ div.hTagcloud {
             @include box-shadow(rgba(0,0,0,.15) 0 0 10px);
             @include trailer();
 
-            a { padding: 0; }
+            a { 
+                padding: 0; 
+                vertical-align: bottom;
+            }
 
             & > li:nth-child(2) {
                 background-color: rgba(0,0,0,.1);
+                max-width: none;
             }
             
             & > li:nth-child(3) {
                 background-color: rgba(0,0,0,.2);
+                max-width: none;
             }
             
             & > li:nth-child(4) {
                 background-color: rgba(0,0,0,.3);
+                max-width: none;
             }
             
             & > li {
                 display: block;
                 float: none;
-                overflow: auto;
+                overflow: hidden;
                 margin-right: 0;
                 
                 &:first-of-type {
@@ -1208,7 +1263,7 @@ div.hTagcloud {
     border-width: 10px 0 0 0;
     overflow: visible;
     @include box-shadow(rgba(0,0,0,.15) 0 0 10px);
-    padding: rhythm() 16px;
+    padding: rhythm(.5) 16px;
     background-color: #fff;
     
     ul { 
@@ -1265,6 +1320,11 @@ div.hTagcloud {
     @include trailer();
 }
 
+/* !---------- Other Plugin Styles ---------- */
+
+#recaptcha_area input {
+    height: intrinsic;
+}
 
 /* !---------- Winter Styles ---------- */
 
@@ -1387,6 +1447,7 @@ div.hTagcloud {
         .item-img {
             border-color: $winter-light-gray
         }
+
         div.hTagcloud {
             border: 0;
             background-color: transparent;
@@ -1512,7 +1573,7 @@ div.hTagcloud {
     }
 
     #content {
-        h1 { color: $spring-link; }
+        & > h1 { color: $spring-link; }
         
         h2 { border-color: #e8e8e8; }
 
@@ -1647,7 +1708,7 @@ div.hTagcloud {
     
     #content {
 
-        h1 { color: $summer-link-red; }
+        & > h1 { color: $summer-link-red; }
         
         h2 { border-color: $summer-light-red; }
 
@@ -1717,6 +1778,8 @@ div.hTagcloud {
     #exhibit-page-navigation {
         a, span { background-color: #fff; }
     }
+    
+    th, td { border-color: $summer-light-blue; }
 } 
 
 
@@ -1779,11 +1842,13 @@ div.hTagcloud {
     }
 
     #content {
-        h1 { color: $autumn-brown; }
+        & > h1 { color: $autumn-brown; }
         
         h2 { border-color: $autumn-gray; }
 
         #primary > div, #sidebar > div { background-color: #fff; }
+        
+        #primary > h1 { color: $autumn-brown; }
 
         & > div, #primary > div, #sidebar > div,
         #advanced-search-form > div, #exhibit-pages { 
@@ -1931,7 +1996,7 @@ div.hTagcloud {
     }
 
     #content {
-        h1 { color: $night-light; }
+        & > h1 { color: $night-light; }
         
         h2 { border-color: $night-shadow; }
 
@@ -1999,6 +2064,10 @@ div.hTagcloud {
         a, span { background-color: $night-darker; }
     }
     
+    .exhibits.summary #exhibit-pages > ul > li:not(:last-of-type) {
+        border-color: $night-shadow;
+    }
+    
     .exhibits.show #content .exhibit-page-nav > li:nth-child(3) {
         background-color: rgba(255,255,255,.08);
     }
@@ -2009,5 +2078,7 @@ div.hTagcloud {
     }
     
     #content div.hTagcloud ul li { background-color: $night-darker; }
+    
+    td, th { border-color: $night-content; }
 } 
 
