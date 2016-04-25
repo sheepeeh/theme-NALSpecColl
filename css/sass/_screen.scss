@@ -1792,35 +1792,35 @@ div.hTagcloud {
         color: $autumn-dark-red;
     }
     
-    h1, #site-title a { color: $autumn-beige; }
+    h1, #site-title a { color: $autumn-title-beige; }
 
     input[type=submit], button, .button, #advanced-search { background-color: $autumn-dark-red; }
 
     input[type=text], input[type=password], textarea { 
-        background-color: $autumn-beige; 
+        // background-color: $autumn-beige; 
         color: $autumn-brown;
     }
 
     a {
         &:link { color: $autumn-link; }
         &:visited { color: $autumn-visited; }
-        &:hover, &:active { color: $autumn-active; }
+        &:hover, &:active { color: $autumn-white; }
     }
 
-    header { background-color: $autumn-red; }
+    header { background-color: $autumn-white; }
     
     nav.top { 
-        background-color: $autumn-dark-beige; 
+        background-color: $autumn-dark-blue; 
 
         li:hover a { color: #fff; }
         
-        a:link, a:visited  { color: $autumn-nav-link; }
+        a:link, a:visited  { color: $autumn-white; }
         a:active, a:hover  { color: #fff; }
         
         ul li ul {
-            background-color: $autumn-dark-beige;
+            background-color: $autumn-dark-blue;
             li {
-                & > a:link, & > a:visited { color: $autumn-nav-link; }
+                & > a:link, & > a:visited { color: $autumn-white; }
                 & > a:active, & > a:hover, &:hover > a { color:#fff; }
             }
         }
@@ -1835,6 +1835,7 @@ div.hTagcloud {
     .secondary-nav a.current,
     .exhibit-section-nav .current a {
         background-color: $autumn-beige;
+        color: $autumn-red;
     }
 
     #home #content > div { 
@@ -1852,7 +1853,7 @@ div.hTagcloud {
 
         & > div, #primary > div, #sidebar > div,
         #advanced-search-form > div, #exhibit-pages { 
-            border-color: $autumn-dark-beige; 
+            border-color: $autumn-dark-red; 
         }
 
         .pagination_previous a, .pagination_next a { 
@@ -1888,7 +1889,7 @@ div.hTagcloud {
     }
 
     footer {
-        background-color: $autumn-dark-red;
+        background-color: $autumn-dark-blue;
     }
 
     footer p {
@@ -1900,7 +1901,7 @@ div.hTagcloud {
     .exhibit-page-nav .current, .exhibit-child-nav .current { background-color: rgba(0,0,0,.1); }
 
     .exhibit-page-nav {
-        a:link, a:visited { color: $autumn-dark-beige; }
+        a:link, a:visited { color: $autumn-red; }
         a:hover, a:active { color: #fff; }
     }
     

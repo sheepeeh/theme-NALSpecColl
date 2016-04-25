@@ -1825,54 +1825,53 @@ Table of Contents
 
   /* !---------- Autumn Styles ---------- */
   .autumn body {
-    background-color: #86443C;
-    color: #86443C;
+    background-color: #8C2E0B;
+    color: #8C2E0B;
   }
   .autumn h1, .autumn #site-title a {
-    color: #F8F1E5;
+    color: #000;
   }
   .autumn input[type=submit], .autumn button, .autumn .button, .autumn #advanced-search {
-    background-color: #86443C;
+    background-color: #8C2E0B;
   }
   .autumn input[type=text], .autumn input[type=password], .autumn textarea {
-    background-color: #F8F1E5;
-    color: #815442;
+    color: #8C2E0B;
   }
   .autumn a:link {
-    color: #FFA300;
+    color: #8C2E0B;
   }
   .autumn a:visited {
-    color: #E2B76B;
+    color: #AF643C;
   }
   .autumn a:hover, .autumn a:active {
-    color: #F16100;
+    color: #fff;
   }
   .autumn header {
-    background-color: #CE6C3E;
+    background-color: #fff;
   }
   .autumn nav.top {
-    background-color: #CABFA6;
+    background-color: #0D233C;
   }
   .autumn nav.top li:hover a {
     color: #fff;
   }
   .autumn nav.top a:link, .autumn nav.top a:visited {
-    color: #BE5E5E;
+    color: #fff;
   }
   .autumn nav.top a:active, .autumn nav.top a:hover {
     color: #fff;
   }
   .autumn nav.top ul li ul {
-    background-color: #CABFA6;
+    background-color: #0D233C;
   }
   .autumn nav.top ul li ul li > a:link, .autumn nav.top ul li ul li > a:visited {
-    color: #BE5E5E;
+    color: #fff;
   }
   .autumn nav.top ul li ul li > a:active, .autumn nav.top ul li ul li > a:hover, .autumn nav.top ul li ul li:hover > a {
     color: #fff;
   }
   .autumn #intro {
-    color: #815442;
+    color: #8C2E0B;
   }
   .autumn #content,
   .autumn #secondary-nav .current a,
@@ -1880,39 +1879,40 @@ Table of Contents
   .autumn .secondary-nav .current a,
   .autumn .secondary-nav a.current,
   .autumn .exhibit-section-nav .current a {
-    background-color: #F8F1E5;
+    background-color: #F4F4DA;
+    color: #AF643C;
   }
   .autumn #home #content > div {
-    border-color: #CABFA6;
+    border-color: #E3B55D;
   }
   .autumn #content > h1 {
-    color: #815442;
+    color: #8C2E0B;
   }
   .autumn #content h2 {
-    border-color: #ECEBE6;
+    border-color: #C0C0C0;
   }
   .autumn #content #primary > div, .autumn #content #sidebar > div {
     background-color: #fff;
   }
   .autumn #content #primary > h1 {
-    color: #815442;
+    color: #8C2E0B;
   }
   .autumn #content > div, .autumn #content #primary > div, .autumn #content #sidebar > div,
   .autumn #content #advanced-search-form > div, .autumn #content #exhibit-pages {
-    border-color: #CABFA6;
+    border-color: #8C2E0B;
   }
   .autumn #content .pagination_previous a, .autumn #content .pagination_next a {
-    background-color: #86443C;
+    background-color: #8C2E0B;
   }
   .autumn #content .pagination input[type=text] {
     border-color: #fff;
     background-color: #fff;
   }
   .autumn #content nav .pagination_list {
-    background-color: #86443C;
+    background-color: #8C2E0B;
   }
   .autumn #content .item-img {
-    border-color: #ECEBE6;
+    border-color: #C0C0C0;
   }
   .autumn #content div.hTagcloud {
     border: 0;
@@ -1922,28 +1922,28 @@ Table of Contents
     box-shadow: transparent 0 0 0;
   }
   .autumn #search-results th {
-    background-color: #CABFA6;
+    background-color: #E3B55D;
   }
   .autumn #search-filters li, .autumn #item-filters li {
     background-color: #fff;
   }
   .autumn .page #content {
-    border-color: #CABFA6;
+    border-color: #E3B55D;
   }
   .autumn footer {
-    background-color: #86443C;
+    background-color: #0D233C;
   }
   .autumn footer p {
     color: #fff;
   }
   .autumn .exhibit-page-nav {
-    background-color: #86443C;
+    background-color: #8C2E0B;
   }
   .autumn .exhibit-page-nav .current, .autumn .exhibit-child-nav .current {
     background-color: rgba(0, 0, 0, 0.1);
   }
   .autumn .exhibit-page-nav a:link, .autumn .exhibit-page-nav a:visited {
-    color: #CABFA6;
+    color: #AF643C;
   }
   .autumn .exhibit-page-nav a:hover, .autumn .exhibit-page-nav a:active {
     color: #fff;
