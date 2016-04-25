@@ -1170,16 +1170,6 @@ Table of Contents
   .exhibits.summary #exhibit-pages a {
     margin: 0.375em 0;
   }
-  .exhibits.show #exhibit-pages li a {
-    max-width: 100%;
-    height: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .exhibits.show #exhibit-pages li {
-    max-width: 40%;
-  }
   .exhibits.show #content h1 {
     font-size: 32px;
   }
@@ -1844,7 +1834,7 @@ Table of Contents
     color: #AF643C;
   }
   .autumn a:hover, .autumn a:active {
-    color: #fff;
+    color: #AF643C;
   }
   .autumn header {
     background-color: #fff;
@@ -1859,7 +1849,7 @@ Table of Contents
     color: #fff;
   }
   .autumn nav.top a:active, .autumn nav.top a:hover {
-    color: #fff;
+    color: #AF643C;
   }
   .autumn nav.top ul li ul {
     background-color: #0D233C;
@@ -1867,8 +1857,12 @@ Table of Contents
   .autumn nav.top ul li ul li > a:link, .autumn nav.top ul li ul li > a:visited {
     color: #fff;
   }
-  .autumn nav.top ul li ul li > a:active, .autumn nav.top ul li ul li > a:hover, .autumn nav.top ul li ul li:hover > a {
-    color: #fff;
+  .autumn nav.top ul li ul li > a:hover, .autumn nav.top ul li ul li:hover > a {
+    color: #AF643C;
+  }
+  .autumn nav.top ul li ul li > a:active {
+    color: #000;
+    font-style: italic;
   }
   .autumn #intro {
     color: #8C2E0B;
@@ -1946,7 +1940,7 @@ Table of Contents
     color: #AF643C;
   }
   .autumn .exhibit-page-nav a:hover, .autumn .exhibit-page-nav a:active {
-    color: #fff;
+    color: #AF643C;
   }
   .autumn #exhibit-page-navigation a, .autumn #exhibit-page-navigation span {
     background-color: #fff;
