@@ -427,8 +427,8 @@ Table of Contents
 
   /* !---------- Header ---------- */
   #site-title {
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 24px;
+    line-height: 36px;
     font-weight: 300;
     text-align: left;
     margin: 0;
@@ -629,6 +629,9 @@ Table of Contents
   }
   #content .field div:only-of-type {
     margin-bottom: 0;
+  }
+  #content div.primary a {
+    text-decoration: underline;
   }
   #content .inputs {
     padding: 0.75em 0 0;
@@ -1816,13 +1819,13 @@ Table of Contents
   /* !---------- Autumn Styles ---------- */
   .autumn body {
     background-color: #8C2E0B;
-    color: #8C2E0B;
+    color: #000;
   }
   .autumn h1, .autumn #site-title a {
     color: #000;
   }
   .autumn input[type=submit], .autumn button, .autumn .button, .autumn #advanced-search {
-    background-color: #8C2E0B;
+    background-color: #0D233C;
   }
   .autumn input[type=text], .autumn input[type=password], .autumn textarea {
     color: #8C2E0B;
@@ -1831,13 +1834,19 @@ Table of Contents
     color: #8C2E0B;
   }
   .autumn a:visited {
-    color: #AF643C;
+    color: #8C2E0B;
   }
   .autumn a:hover, .autumn a:active {
     color: #AF643C;
   }
   .autumn header {
     background-color: #fff;
+  }
+  .autumn header h2#site-slogan a > span {
+    color: #000;
+  }
+  .autumn header h1#site-name a > span {
+    color: #5C5C5C;
   }
   .autumn nav.top {
     background-color: #0D233C;
@@ -1874,7 +1883,7 @@ Table of Contents
   .autumn .secondary-nav a.current,
   .autumn .exhibit-section-nav .current a {
     background-color: #F4F4DA;
-    color: #AF643C;
+    color: #000;
   }
   .autumn #home #content > div {
     border-color: #E3B55D;
@@ -1944,6 +1953,9 @@ Table of Contents
   }
   .autumn #exhibit-page-navigation a, .autumn #exhibit-page-navigation span {
     background-color: #fff;
+  }
+  .autumn .exhibit-block span.break-row {
+    border-color: #F4F4DA !important;
   }
 
   /* !---------- Night Styles ---------- */
@@ -2850,7 +2862,7 @@ Table of Contents
   }
 
   .exhibits.show #content #exhibit-page-navigation > div {
-    width: 100%;
+    width: 33%;
     padding: 0;
     text-align: center;
   }

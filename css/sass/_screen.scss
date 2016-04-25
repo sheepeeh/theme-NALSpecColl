@@ -400,8 +400,8 @@ nav.pagination {
 /* !---------- Header ---------- */
 
 #site-title {
-   font-size: 2 * $base-font-size;
-   line-height: 2 * $base-line-height;
+   font-size: 1.5 * $base-font-size;
+   line-height: 1.5 * $base-line-height;
    font-weight: 300;
    text-align: left;
    margin: 0;
@@ -596,6 +596,8 @@ footer {
     .field {
       div:only-of-type { margin-bottom: 0; }
   }
+
+      div.primary a { text-decoration: underline; }
   
   .inputs {
     padding: rhythm(.5) 0 0;
@@ -1789,12 +1791,12 @@ div.hTagcloud {
 
     body {
         background-color: $autumn-dark-red;
-        color: $autumn-dark-red;
+        color: #000;
     }
     
     h1, #site-title a { color: $autumn-title-beige; }
 
-    input[type=submit], button, .button, #advanced-search { background-color: $autumn-dark-red; }
+    input[type=submit], button, .button, #advanced-search { background-color: $autumn-dark-blue; }
 
     input[type=text], input[type=password], textarea { 
         // background-color: $autumn-beige; 
@@ -1803,11 +1805,15 @@ div.hTagcloud {
 
     a {
         &:link { color: $autumn-link; }
-        &:visited { color: $autumn-visited; }
+        &:visited { color: $autumn-dark-red; }
         &:hover, &:active { color: $autumn-red; }
     }
 
-    header { background-color: $autumn-white; }
+    header { 
+        background-color: $autumn-white; 
+        h2#site-slogan a > span { color: #000; }
+        h1#site-name a > span { color: $autumn-light-brown; }
+    }
     
     nav.top { 
         background-color: $autumn-dark-blue; 
@@ -1836,7 +1842,7 @@ div.hTagcloud {
     .secondary-nav a.current,
     .exhibit-section-nav .current a {
         background-color: $autumn-beige;
-        color: $autumn-red;
+        color: #000;
     }
 
     #home #content > div { 
@@ -1909,6 +1915,9 @@ div.hTagcloud {
     #exhibit-page-navigation {
         a, span { background-color: #fff; }
     }
+
+    .exhibit-block span.break-row { border-color: $autumn-beige !important; }
+
 } 
 
 
