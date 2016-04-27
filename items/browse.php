@@ -176,7 +176,7 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
               <?php else: ?>
 
                 <div class="ao-no-thumb">
-                  <p style="text-align:center;padding:20%; color:#aaa;">No <em>digital</em> file available. Please contact Special Collections for access.</p>
+                  <p>No <em>digital</em> file available. Please contact Special Collections for access.</p>
 
                 <?php endif; ?>
               </div>
