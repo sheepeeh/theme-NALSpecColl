@@ -577,7 +577,15 @@ header, nav.top, #content, footer {
 
     .ao-no-thumb {
       border:1px solid #ccc !important;
-      min-height:9em;
+      height:9em;
+    }
+
+    .ao-no-thumb p {
+        text-align: center;
+        padding: 10%;
+        color: #aaa;
+        font-size: 80%;
+        margin-top: 0px;
     }
 
     .ao-thumb img {
@@ -835,6 +843,7 @@ header, nav.top, #content, footer {
         padding-left:0.5em;
     }
 
+.winter {
     .exhibits #processing-report {
         border-collapse: collapse;
         border: 1px solid rgba(215, 225, 240, 1);
@@ -892,6 +901,11 @@ header, nav.top, #content, footer {
         color: #fff;
         font-weight:bold;
      }
+
+         .exhibit-table thead {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
     .exhibit-table  td,
     .exhibit-table  th {
         padding:0.5em;
@@ -918,6 +932,98 @@ header, nav.top, #content, footer {
     .exhibit-table  td:first-child {
         font-weight:bold;
     }
+}
+
+.autumn {
+    .exhibits #processing-report {
+        border-collapse: collapse;
+        border: 1px solid rgba(215, 225, 240, 1);
+        width:100%;
+    }
+     .exhibits #processing-report thead,
+     .exhibits #processing-report tfoot,
+     .exhibits #processing-report th > a  {
+        background-color: $autumn-dark-red;
+        color: #fff;
+        font-weight:bold;
+     }
+    .exhibits #processing-report  td,
+    .exhibits #processing-report  th {
+        padding:0.4em;
+        text-align:center;
+        vertical-align: top;
+    }
+    .exhibits #processing-report.small-text  td,
+    .exhibits #processing-report.small-text th {
+        font-size:0.75em;
+        line-height:1em;
+        text-align:left;
+    }        
+      .exhibits #processing-report  td.empty {
+        text-align:center;
+        vertical-align: middle;
+    }
+    .exhibits #processing-report  tr {
+        border: none;
+        border-top:none;
+    }
+    .exhibits #processing-report tr:nth-child(2n) {
+        background-color: rgba(215, 225, 240, 1);
+    }
+    .exhibits #processing-report  td:first-child {
+        font-weight:bold;
+    }
+
+    .exhibits #processing-report {
+        border-collapse: collapse;
+        border: 1px solid rgba(215, 225, 240, 1);
+        width:100%;
+    }
+
+    .exhibit-table {
+        border-collapse: collapse;
+        border: 1px solid rgba(215, 225, 240, 1);
+        width:100%;    
+    }
+     .exhibit-table thead,
+     .exhibit-table tfoot,
+     .exhibit-table th > a  {
+        background-color: $autumn-dark-red;
+        color: #fff;
+        font-weight:bold;
+     }
+    
+    .exhibit-table thead {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .exhibit-table  td,
+    .exhibit-table  th {
+        padding:0.5em;
+        text-align:left;
+        vertical-align: top;
+    }
+    .exhibit-table.small-text  td,
+    .exhibit-table.small-text th {
+        font-size:0.75em;
+        line-height:1em;
+        text-align:left;
+    }        
+      .exhibit-table  td.empty {
+        text-align:center;
+        vertical-align: middle;
+    }
+    .exhibit-table  tr {
+        border: none;
+        border-top:none;
+    }
+    .exhibit-table tr:nth-child(2n) {
+        background-color: $autumn-beige;
+    }
+    .exhibit-table  td:first-child {
+        font-weight:bold;
+    }
+}
     #content .exhibit-block h2 {
         font-weight: 500;
         width: 100%;
