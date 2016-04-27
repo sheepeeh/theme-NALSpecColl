@@ -238,6 +238,14 @@
     color: #5c5c5c !important;
 }
 
+.header__site-link {
+    color: #5c5c5c !important;
+}
+
+#site-slogan > a:nth-child(1) {
+    color: #000 !important;
+}
+
 .header__site-link:link,
 .header__site-link:visited {
     text-decoration: none;
@@ -273,7 +281,7 @@
     color: #5c5c5c;
 }
 
-#sub-links {
+.winter #sub-links {
     font-size: 80%;
 
     float: right;
@@ -287,6 +295,19 @@
     background-color: #0d233c;
 }
 
+.autumn #sub-links {
+    font-size: 80%;
+
+    float: right;
+
+    max-width: 415px;
+
+    text-align: justify;
+
+    color: #f2f2f2;
+    border: 2px solid #8C2E0B;
+    background-color: #8C2E0B;
+}
 
 
 #sub-links li a {
