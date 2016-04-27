@@ -1472,6 +1472,8 @@ div.hTagcloud {
             -moz-box-shadow: transparent 0 0 0;
             box-shadow: transparent 0 0 0;
         }
+
+        .highlight { background-color: $winter-highlight; }
     }
 
     #search-results th {
@@ -1942,6 +1944,8 @@ div.hTagcloud {
             -moz-box-shadow: transparent 0 0 0;
             box-shadow: transparent 0 0 0;
         }
+
+        .highlight { background-color: $autumn-highlight; }
     }
 
     #search-results th {

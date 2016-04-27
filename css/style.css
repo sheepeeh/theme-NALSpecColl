@@ -1488,6 +1488,9 @@ Table of Contents
     -moz-box-shadow: transparent 0 0 0;
     box-shadow: transparent 0 0 0;
   }
+  .winter #content .highlight {
+    background-color: #e5ecf9;
+  }
   .winter #search-results th {
     background-color: #0d233c;
   }
@@ -1961,6 +1964,9 @@ Table of Contents
     -webkit-box-shadow: transparent 0 0 0;
     -moz-box-shadow: transparent 0 0 0;
     box-shadow: transparent 0 0 0;
+  }
+  .autumn #content .highlight {
+    background-color: #FFFFEA;
   }
   .autumn #search-results th {
     background-color: #8C2E0B;
