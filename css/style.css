@@ -36,7 +36,7 @@ Table of Contents
   }
 
   a {
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   /* !---------- Headings ---------- */
@@ -81,7 +81,6 @@ Table of Contents
   /* !---------- Form Elements ---------- */
   label {
     padding-top: 1.125em;
-    padding-bottom: 1.125em;
     display: inline-block;
     font-weight: 500;
   }
@@ -261,6 +260,7 @@ Table of Contents
   .top a {
     padding-top: 1.125em;
     padding-bottom: 1.125em;
+    text-decoration: none;
   }
   .top .mobile {
     margin: 2.25em auto;
@@ -282,7 +282,7 @@ Table of Contents
   }
   .secondary-nav .current, .secondary-nav .active, #secondary-nav .current, #secondary-nav .active {
     font-weight: 500;
-    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.25);
   }
   .secondary-nav ul, #secondary-nav ul {
     padding-left: 0;
@@ -291,6 +291,10 @@ Table of Contents
     float: left;
     width: auto;
     margin-right: 16px;
+    padding: 0.375em;
+  }
+  .secondary-nav a, #secondary-nav a {
+    text-decoration: none;
   }
 
   /* !---------- Pagination ---------- */
@@ -1003,7 +1007,7 @@ Table of Contents
   }
   .advanced-search #content form > div .label {
     margin-bottom: 0.75em;
-    margin-top: 0.75em;
+    font-weight: bold;
   }
   .advanced-search #content form > div:after {
     content: "";
@@ -1164,14 +1168,11 @@ Table of Contents
   .exhibits.summary #content #primary > div:last-child {
     margin-bottom: 0;
   }
-  .exhibits.summary #exhibit-pages > ul > li:not(:last-of-type) {
-    border-color: #dfe2e2;
-    border-bottom-width: 0.0625em;
-    border-bottom-style: solid;
-    padding-bottom: -0.0625em;
-  }
   .exhibits.summary #exhibit-pages a {
-    margin: 0.375em 0;
+    text-decoration: none;
+  }
+  .exhibits #exhibit-pages a {
+    text-decoration: none;
   }
   .exhibits.show #content h1 {
     font-size: 32px;
@@ -1204,6 +1205,7 @@ Table of Contents
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     *behavior: url("../javascripts/boxsizing.htc");
+    text-decoration: none;
   }
   .exhibits.show #content #exhibit-page-navigation > div {
     padding: 0;
@@ -1232,6 +1234,7 @@ Table of Contents
   .exhibits.show #content .exhibit-page-nav a {
     padding: 0;
     vertical-align: bottom;
+    text-decoration: none;
   }
   .exhibits.show #content .exhibit-page-nav > li:nth-child(2) {
     background-color: rgba(0, 0, 0, 0.1);
@@ -1861,6 +1864,9 @@ Table of Contents
   }
   .autumn nav.top ul li ul li > a:link, .autumn nav.top ul li ul li > a:visited, .autumn nav.top ul li ul li > a:active, .autumn nav.top ul li ul li > a:hover {
     color: #fff;
+  }
+  .autumn .secondary-nav .current, .autumn .secondary-nav .active, .autumn #secondary-nav .current, .autumn #secondary-nav .active {
+    background-color: rgba(255, 255, 255, 0.5);
   }
   .autumn #intro {
     color: #fff;

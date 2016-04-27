@@ -37,7 +37,7 @@
    height: 100%;
 }
 
-a {        text-decoration: none;    }
+a {        text-decoration: underline;    }
 
 /* !---------- Headings ---------- */
 
@@ -82,7 +82,7 @@ ul {
 
 label {
     @include padding-leader(.75);
-    @include padding-trailer(.75);
+    // @include padding-trailer(.75);
     display: inline-block;
     font-weight:500;
 }
@@ -247,6 +247,7 @@ nav {
     a {
         @include padding-leader(.75);
         @include padding-trailer(.75);
+        text-decoration: none;
     }
     
     .mobile {
@@ -264,7 +265,8 @@ nav {
     
     .current, .active { 
         font-weight: 500; 
-        text-transform: uppercase;
+        // text-transform: uppercase;
+        background-color: rgba(255,255,255,0.25);
     }
     
     ul { 
@@ -275,7 +277,10 @@ nav {
         float: left;
         width: auto;
         margin-right: 16px;
+        padding: rhythm(0.25);
     }
+
+    a { text-decoration: none; }
 }
 
 /* !---------- Pagination ---------- */
@@ -963,7 +968,8 @@ div.hTagcloud {
     
     .label {
         @include trailer(.5);
-        @include leader(.5);
+        // @include leader(.5);
+        font-weight: bold;
     }
     
     @include pie-clearfix();
@@ -1127,11 +1133,18 @@ div.hTagcloud {
     }
 
     &.summary #exhibit-pages > ul > li:not(:last-of-type) {
-        border-color: $winter-light-gray;
-        @include trailing-border(1px, 0, $base-font-size, solid);
+        // border-color: $winter-light-gray;
+        // @include trailing-border(1px, 0, $base-font-size, solid);
     }
     
-    &.summary #exhibit-pages a { margin: rhythm(.25) 0; }
+    &.summary #exhibit-pages a { 
+        // margin: rhythm(.25) 0; 
+        text-decoration: none;
+    }
+
+    #exhibit-pages a {         
+        text-decoration: none;
+    }
     
     // &.show #exhibit-pages li a {
     //     max-width: 100%;
@@ -1170,6 +1183,7 @@ div.hTagcloud {
                 width: 100%;
                 @include box-shadow(rgba(0,0,0,.15) 0 0 10px);
                 @include boxsizing(border-box);
+                text-decoration: none;
             }
 
             & > div { 
@@ -1201,6 +1215,7 @@ div.hTagcloud {
             a { 
                 padding: 0; 
                 vertical-align: bottom;
+                text-decoration: none;
             }
 
             & > li:nth-child(2) {
@@ -1825,6 +1840,11 @@ div.hTagcloud {
         }
     }
 
+    .secondary-nav, #secondary-nav {
+        .current, .active { 
+            background-color: rgba(255,255,255,0.5);
+        }   
+    }
     #intro { color: #fff; }
     #content,
     #secondary-nav .current a,
