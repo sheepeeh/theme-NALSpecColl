@@ -1857,7 +1857,11 @@ div.hTagcloud {
         #sidebar > div {
             background-color: #fff;
         }
-
+        
+        #advanced-search-form > div {
+            border: none;
+            box-shadow: none;
+        }
         #sidebar a {
             color: $autumn-dark-red;
         }
@@ -1882,7 +1886,8 @@ div.hTagcloud {
             background-color: $autumn-gray;
         }
 
- 
+
+
         .items-nav a:link,
         .items-nav a:visited,
         .secondary-nav a:link,
@@ -1985,6 +1990,13 @@ div.hTagcloud {
     #exhibit-page-navigation {
         a, span { background-color: #fff; }
     }
+
+   .browse .disclaimer, .advanced-search .disclaimer {
+            font-size: 80%;
+            font-style: italic;
+            margin-top: -1em;
+        }
+
 
     .exhibit-block span.break-row { border-color: $autumn-beige !important; }
 }

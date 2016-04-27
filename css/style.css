@@ -1895,6 +1895,10 @@ Table of Contents
   .autumn #content #sidebar > div {
     background-color: #fff;
   }
+  .autumn #content #advanced-search-form > div {
+    border: none;
+    box-shadow: none;
+  }
   .autumn #content #sidebar a {
     color: #8C2E0B;
   }
@@ -2019,6 +2023,11 @@ Table of Contents
   }
   .autumn #exhibit-page-navigation a, .autumn #exhibit-page-navigation span {
     background-color: #fff;
+  }
+  .autumn .browse .disclaimer, .autumn .advanced-search .disclaimer {
+    font-size: 80%;
+    font-style: italic;
+    margin-top: -1em;
   }
   .autumn .exhibit-block span.break-row {
     border-color: #F4F4DA !important;
