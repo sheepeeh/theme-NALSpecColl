@@ -93,9 +93,10 @@ nav.top {
 /* !---------- Search ---------- */
 
 #search-container {
-    padding: 0;
+    @include padding-leader(.25);
+    @include padding-trailer(.25);
     @include span-columns(4 omega,12);
-    @include leader(1.25);
+    // @include leader(1.25);
     input { padding: rhythm(.3125) 8px; }
 }
 

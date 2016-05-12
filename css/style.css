@@ -436,13 +436,10 @@ Table of Contents
     font-weight: 300;
     text-align: left;
     margin: 0;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
+    padding-top: 0.375em;
+    padding-bottom: 0.375em;
   }
 
-  #search-container {
-    padding: 0 16px 1.5em;
-  }
   #search-container:after {
     content: "";
     display: block;
@@ -2301,13 +2298,13 @@ Table of Contents
 
   /* !---------- Search ---------- */
   #search-container {
-    padding: 0;
+    padding-top: 0.375em;
+    padding-bottom: 0.375em;
     width: 32.20339%;
     float: right;
     margin-right: 0;
     *margin-left: -1em;
     display: inline;
-    margin-top: 1.875em;
   }
   #search-container input {
     padding: 0.46875em 8px;

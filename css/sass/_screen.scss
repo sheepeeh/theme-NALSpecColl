@@ -410,13 +410,13 @@ nav.pagination {
    font-weight: 300;
    text-align: left;
    margin: 0;
-   @include padding-leader(.5);
-   @include padding-trailer(.5);
+   @include padding-leader(.25);
+   @include padding-trailer(.25);
 }
 
 #search-container {
-    padding: 0 16px rhythm();
-    
+    // padding: 0 16px rhythm();
+  
     &:after {
         content: "";
         display: block;
