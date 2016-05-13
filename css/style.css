@@ -434,6 +434,7 @@ Table of Contents
     font-size: 24px;
     line-height: 36px;
     font-weight: 300;
+    font-family: Helvetica,sans-serif;
     text-align: left;
     margin: 0;
     padding-top: 0.375em;
@@ -1847,6 +1848,7 @@ Table of Contents
   }
   .autumn nav.top {
     background-color: #0D233C;
+    border-bottom: 3px solid #8C2E0B;
   }
   .autumn nav.top li:hover a {
     color: #fff;
@@ -1981,6 +1983,9 @@ Table of Contents
   }
   .autumn footer p {
     color: #fff;
+  }
+  .autumn #wrap > footer:first-of-type {
+    border-top: 6px solid #8C2E0B;
   }
   .autumn .exhibits .exhibit-page-nav {
     background-color: #8C2E0B;

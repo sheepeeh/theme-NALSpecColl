@@ -408,6 +408,7 @@ nav.pagination {
    font-size: 1.5 * $base-font-size;
    line-height: 1.5 * $base-line-height;
    font-weight: 300;
+   font-family: Helvetica,sans-serif;
    text-align: left;
    margin: 0;
    @include padding-leader(.25);
@@ -1826,6 +1827,7 @@ div.hTagcloud {
 
     nav.top {
         background-color: $autumn-dark-blue;
+        border-bottom: 3px solid $autumn-dark-red;
 
         li:hover a { color: #fff; }
         
@@ -1965,6 +1967,10 @@ div.hTagcloud {
     footer p {
         color: #fff;
     }
+    #wrap > footer:first-of-type {
+        border-top: 6px solid $autumn-dark-red;
+    }
+
     .exhibits {
         .exhibit-page-nav {
             background-color: $autumn-dark-red;
