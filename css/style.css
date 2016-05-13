@@ -1841,7 +1841,7 @@ Table of Contents
     color: #8C2E0B;
   }
   .autumn a:hover, .autumn a:active {
-    color: #AF643C;
+    color: #C5400F;
   }
   .autumn header {
     background-color: #fff;
@@ -1952,7 +1952,7 @@ Table of Contents
   .autumn #content #outputs a:active,
   .autumn #content #exhibit-child-pages a:hover,
   .autumn #content #exhibit-child-pages a:active {
-    color: #AF643C;
+    color: #C5400F;
   }
   .autumn #content .item-img {
     border-color: #dfe2e2;
@@ -2030,10 +2030,10 @@ Table of Contents
     background-color: rgba(0, 0, 0, 0.1);
   }
   .autumn .exhibit-page-nav a:link, .autumn .exhibit-page-nav a:visited {
-    color: #AF643C;
+    color: #C5400F;
   }
   .autumn .exhibit-page-nav a:hover, .autumn .exhibit-page-nav a:active {
-    color: #AF643C;
+    color: #C5400F;
   }
   .autumn #exhibit-page-navigation a, .autumn #exhibit-page-navigation span {
     background-color: #fff;
