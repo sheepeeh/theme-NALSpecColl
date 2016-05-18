@@ -35,6 +35,43 @@
     padding-left: 0 !important;
 }
 
+#skip-link {
+    margin: 0;
+}
+
+#skip-link a, #skip-link a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+}
+
+.element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+}
+
+.element-invisible, .element-focusable {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.element-focusable:active, .element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
     #header {
@@ -117,6 +154,9 @@
         margin-right: 12px;
     }
 }
+
+
+
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     #header {
         width: 95%;
