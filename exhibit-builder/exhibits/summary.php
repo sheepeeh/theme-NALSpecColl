@@ -21,6 +21,7 @@
 <?php set_exhibit_pages_for_loop_by_exhibit(); ?>
 <?php if (has_loop_records('exhibit_page')): ?>
 <nav id="exhibit-pages">
+    <span><strong>Exhibit Navigation</strong></span>
     <ul>
         <?php foreach (loop('exhibit_page') as $exhibitPage): ?>
         <?php echo exhibit_builder_page_summary($exhibitPage); ?>
