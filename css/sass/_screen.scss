@@ -584,6 +584,10 @@ footer {
         width: 100%;
     }
 
+    h2 {
+        margin:1em 0 0.25em 0;
+    }
+
     & > div, section {
         background-color: #fff;
         border-style: solid;
@@ -1866,7 +1870,8 @@ div.hTagcloud {
             color: $autumn-light-brown;
         }
         h2 {
-            border-color: $winter-light-gray
+            border-color: $winter-light-gray;
+            font-weight: 500;
         }
         div {
             border-color: $autumn-gray;
