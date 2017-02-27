@@ -204,7 +204,7 @@ function custom_paging() {
         }
         //Browsing exhibit 2 items
         elseif (strpos($_SERVER['HTTP_REFERER'],'exhibits/show/') != false) {
-            $exhibit_slug = preg_replace('/(.*)(exhibits\/show\/)(\w*)(.*)/', "$3", $_SERVER['HTTP_REFERER']);
+            $exhibit_slug = preg_replace('/(.*)(exhibits\/show\/)([A-z0-9\-]*)(.*)/', "$3", $_SERVER['HTTP_REFERER']);
             $exhibit = get_db()->getTable('Exhibit')->findBySlug($exhibit_slug);
 
             $exhibit_query = "search=&advanced[0][element_id]=&advanced[0][type]=&advanced[0][terms]=&range=&collection=&type=&user=&public=&featured=&exhibit=" . $exhibit['id'] . "&submit_search=Search&sort_field=Dublin+Core%2CDate";
