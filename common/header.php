@@ -38,7 +38,7 @@
     <?php 
 
         echo head_js();
-
+     
     ?>
 
 
@@ -53,6 +53,7 @@
         <p id="skip-link">
             <a id="anch_0" href="#content" class="element-invisible element-focusable">Jump to Main Content</a>
         </p>
+        <header id="header-back">
             <!-- Begin NAL main header -->
                  <header class="header" id="header" role="banner">
 
