@@ -563,6 +563,16 @@ Table of Contents
     margin-bottom: 0em;
   }
 
+  #alert {
+    background-color: #F0E442;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    border-top: none;
+  }
+
   /* !---------- Footer ---------- */
   footer {
     margin-top: 1.5em;

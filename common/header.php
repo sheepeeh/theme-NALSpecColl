@@ -38,7 +38,7 @@
     <?php 
 
         echo head_js();
-     
+
     ?>
 
 
@@ -122,6 +122,11 @@
         </nav>
 
         <div id="content">
+            <?php if ( $alertText = get_theme_option('Alert Box Text') ): ?>
+                <div id="alert" style="background-color:#F0E442; color:#000; font-weight:800; text-align:center; width:50%; margin-left:25%; border-top:none;">
+                    <p><?php echo $alertText; ?></p>
+                </div>
+            <?php endif; ?>
             <?php
                 if(! is_current_url(WEB_ROOT)) {
                   fire_plugin_hook('public_content_top', array('view'=>$this));
