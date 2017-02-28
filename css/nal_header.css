@@ -35,6 +35,43 @@
     padding-left: 0 !important;
 }
 
+#skip-link {
+    margin: 0;
+}
+
+#skip-link a, #skip-link a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+}
+
+.element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+}
+
+.element-invisible, .element-focusable {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.element-focusable:active, .element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
     #header {
@@ -56,7 +93,7 @@
     header #advanced-form > p:nth-child(2),
     #site-title,
     #nal-logos,
-    #search-container,
+    /*#search-container,*/
     #sub-nav-container,
     #header_logo_site_info,
     .header__secondary-menu {
@@ -117,6 +154,9 @@
         margin-right: 12px;
     }
 }
+
+
+
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     #header {
         width: 95%;
@@ -140,7 +180,7 @@
     header #advanced-form > p:nth-child(2),
     #site-title,
     #nal-logos,
-    #search-container,
+    /*#search-container,*/
     #sub-nav-container,
     #header_logo_site_info,
     .header__secondary-menu {
@@ -238,6 +278,14 @@
     color: #5c5c5c !important;
 }
 
+.header__site-link {
+    color: #5c5c5c !important;
+}
+
+#site-slogan > a:nth-child(1) {
+    color: #000 !important;
+}
+
 .header__site-link:link,
 .header__site-link:visited {
     text-decoration: none;
@@ -287,6 +335,19 @@
     background-color: #0d233c;
 }
 
+/*.autumn #sub-links {
+    font-size: 80%;
+
+    float: right;
+
+    max-width: 415px;
+
+    text-align: justify;
+
+    color: #f2f2f2;
+    border: 2px solid #8C2E0B;
+    background-color: #8C2E0B;
+}*/
 
 
 #sub-links li a {

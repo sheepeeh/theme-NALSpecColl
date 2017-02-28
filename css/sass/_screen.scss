@@ -37,7 +37,7 @@
    height: 100%;
 }
 
-a {        text-decoration: none;    }
+a {        text-decoration: underline;    }
 
 /* !---------- Headings ---------- */
 
@@ -82,7 +82,7 @@ ul {
 
 label {
     @include padding-leader(.75);
-    @include padding-trailer(.75);
+    // @include padding-trailer(.75);
     display: inline-block;
     font-weight:500;
 }
@@ -247,6 +247,7 @@ nav {
     a {
         @include padding-leader(.75);
         @include padding-trailer(.75);
+        text-decoration: none;
     }
     
     .mobile {
@@ -264,7 +265,8 @@ nav {
     
     .current, .active { 
         font-weight: 500; 
-        text-transform: uppercase;
+        // text-transform: uppercase;
+        background-color: rgba(255,255,255,0.25);
     }
     
     ul { 
@@ -275,7 +277,10 @@ nav {
         float: left;
         width: auto;
         margin-right: 16px;
+        padding: rhythm(0.25);
     }
+
+    a { text-decoration: none; }
 }
 
 /* !---------- Pagination ---------- */
@@ -400,18 +405,19 @@ nav.pagination {
 /* !---------- Header ---------- */
 
 #site-title {
-   font-size: 2 * $base-font-size;
-   line-height: 2 * $base-line-height;
+   font-size: 1.5 * $base-font-size;
+   line-height: 1.5 * $base-line-height;
    font-weight: 300;
+   font-family: Helvetica,sans-serif;
    text-align: left;
    margin: 0;
-   @include padding-leader(.5);
-   @include padding-trailer(.5);
+   @include padding-leader(.25);
+   @include padding-trailer(.25);
 }
 
 #search-container {
-    padding: 0 16px rhythm();
-    
+    // padding: 0 16px rhythm();
+  
     &:after {
         content: "";
         display: block;
@@ -534,6 +540,15 @@ nav.pagination {
     }
 }
 
+#alert {
+    background-color:#F0E442;
+    color:#000;
+    font-weight:800;
+    text-align:center;
+    width:50%;
+    margin-left:25%;
+    border-top:none;
+}
 
 /* !---------- Footer ---------- */
 
@@ -578,6 +593,10 @@ footer {
         width: 100%;
     }
 
+    h2 {
+        margin:1em 0 0.25em 0;
+    }
+
     & > div, section {
         background-color: #fff;
         border-style: solid;
@@ -596,6 +615,8 @@ footer {
     .field {
       div:only-of-type { margin-bottom: 0; }
   }
+
+      div.primary a { text-decoration: underline; }
   
   .inputs {
     padding: rhythm(.5) 0 0;
@@ -961,7 +982,8 @@ div.hTagcloud {
     
     .label {
         @include trailer(.5);
-        @include leader(.5);
+        // @include leader(.5);
+        font-weight: bold;
     }
     
     @include pie-clearfix();
@@ -1125,23 +1147,30 @@ div.hTagcloud {
     }
 
     &.summary #exhibit-pages > ul > li:not(:last-of-type) {
-        border-color: $winter-light-gray;
-        @include trailing-border(1px, 0, $base-font-size, solid);
+        // border-color: $winter-light-gray;
+        // @include trailing-border(1px, 0, $base-font-size, solid);
     }
     
-    &.summary #exhibit-pages a { margin: rhythm(.25) 0; }
-    
-    &.show #exhibit-pages li a {
-        max-width: 100%;
-        height: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    &.summary #exhibit-pages a { 
+        // margin: rhythm(.25) 0; 
+        text-decoration: none;
+    }
+
+    #exhibit-pages a {         
+        text-decoration: none;
     }
     
-    &.show #exhibit-pages li {
-        max-width: 40%;
-    }
+    // &.show #exhibit-pages li a {
+    //     max-width: 100%;
+    //     height: 100%;
+    //     overflow: hidden;
+    //     white-space: nowrap;
+    //     text-overflow: ellipsis;
+    // }
+    
+    // &.show #exhibit-pages li {
+    //     max-width: 40%;
+    // }
 
     &.show #content { 
         h1 { 
@@ -1168,6 +1197,7 @@ div.hTagcloud {
                 width: 100%;
                 @include box-shadow(rgba(0,0,0,.15) 0 0 10px);
                 @include boxsizing(border-box);
+                text-decoration: none;
             }
 
             & > div { 
@@ -1199,6 +1229,7 @@ div.hTagcloud {
             a { 
                 padding: 0; 
                 vertical-align: bottom;
+                text-decoration: none;
             }
 
             & > li:nth-child(2) {
@@ -1455,6 +1486,8 @@ div.hTagcloud {
             -moz-box-shadow: transparent 0 0 0;
             box-shadow: transparent 0 0 0;
         }
+
+        .highlight { background-color: $winter-highlight; }
     }
 
     #search-results th {
@@ -1786,48 +1819,50 @@ div.hTagcloud {
 /* !---------- Autumn Styles ---------- */
 
 .autumn {
-
     body {
-        background-color: $autumn-dark-red;
-        color: $autumn-dark-red;
+        background-color: $autumn-dark-blue;
+        color: #000;
     }
+
+    h1, #site-title a { color: $autumn-dark-red; }
+
+    input[type=submit], button, .button, #advanced-search { background-color: $autumn-dark-blue; }
     
-    h1, #site-title a { color: $autumn-beige; }
-
-    input[type=submit], button, .button, #advanced-search { background-color: $autumn-dark-red; }
-
-    input[type=text], input[type=password], textarea { 
-        background-color: $autumn-beige; 
-        color: $autumn-brown;
-    }
+    input[type=text], input[type=password], textarea { background-color: $autumn-white; }
 
     a {
-        &:link { color: $autumn-link; }
-        &:visited { color: $autumn-visited; }
-        &:hover, &:active { color: $autumn-active; }
+        &:link { color: $autumn-dark-red; }
+        &:visited { color: $autumn-dark-red; }
+        &:hover, &:active { color: $autumn-red; }
     }
 
-    header { background-color: $autumn-red; }
-    
-    nav.top { 
-        background-color: $autumn-dark-beige; 
+    header { background-color: #fff; }
+
+    nav.top {
+        background-color: $autumn-dark-blue;
+        border-bottom: 3px solid $autumn-dark-red;
 
         li:hover a { color: #fff; }
         
-        a:link, a:visited  { color: $autumn-nav-link; }
-        a:active, a:hover  { color: #fff; }
-        
+        a:link, a:visited {  color: $autumn-white; }
+        a:active, a:hover { color: #fff; }
+
         ul li ul {
-            background-color: $autumn-dark-beige;
+            background-color: $autumn-dark-blue;
+            margin-top: -2px;
+            border-top: 1px solid $autumn-dark-blue;
             li {
-                & > a:link, & > a:visited { color: $autumn-nav-link; }
-                & > a:active, & > a:hover, &:hover > a { color:#fff; }
+                & > a:link, & > a:visited, & > a:active, & > a:hover { color: #fff; }
             }
         }
     }
-    
-    #intro { color: $autumn-brown; }
 
+    .secondary-nav, #secondary-nav {
+        .current, .active { 
+            background-color: rgba(255,255,255,0.5);
+        }   
+    }
+    #intro { color: #fff; }
     #content,
     #secondary-nav .current a,
     #secondary-nav a.current,
@@ -1836,78 +1871,181 @@ div.hTagcloud {
     .exhibit-section-nav .current a {
         background-color: $autumn-beige;
     }
-
-    #home #content > div { 
-        border-color: $autumn-dark-beige; 
+    #home #content > div {
+        border-color: $autumn-dark-blue;
     }
-
     #content {
-        & > h1 { color: $autumn-brown; }
-        
-        h2 { border-color: $autumn-gray; }
-
-        #primary > div, #sidebar > div { background-color: #fff; }
-        
-        #primary > h1 { color: $autumn-brown; }
-
-        & > div, #primary > div, #sidebar > div,
-        #advanced-search-form > div, #exhibit-pages { 
-            border-color: $autumn-dark-beige; 
+        h1 {
+            color: $autumn-light-brown;
         }
-
-        .pagination_previous a, .pagination_next a { 
-            background-color: $autumn-dark-red; 
+        h2 {
+            border-color: $winter-light-gray;
+            font-weight: 500;
         }
-        
-        .pagination input[type=text] { 
-            border-color: #fff; 
+        div {
+            border-color: $autumn-gray;
+        }
+        & > div,
+        #primary > div,
+        #sidebar > div,
+        #exhibit-pages {
+            border-color: $autumn-dark-blue;
+        }
+        #primary > div,
+        #sidebar > div {
             background-color: #fff;
         }
-
-        nav .pagination_list { 
-            background-color: $autumn-dark-red;             
+        
+        #advanced-search-form > div {
+            border: none;
+            box-shadow: none;
         }
-        
-        .item-img { border-color: $autumn-gray; }
-        
+        #sidebar a {
+            color: $autumn-dark-red;
+        }
+        .pagination_previous a,
+        .pagination_next a {
+            background-color: $autumn-gray;
+        }
+        .pagination a:link,
+        .pagination a:visited {
+            color: $autumn-beige;
+        }
+        .pagination a:hover,
+        .pagination a:active {
+            color: #fff;
+        }
+        .pagination input[type=text] {
+            border-color: rgba(156, 156, 156, 1);
+            background-color: #fff;
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, .15);
+        }
+        nav .pagination_list {
+            background-color: $autumn-gray;
+        }
+
+
+
+        .items-nav a:link,
+        .items-nav a:visited,
+        .secondary-nav a:link,
+        .secondary-nav a:visited,
+        #secondary-nav a:link,
+        #secondary-nav a:visited,
+        #outputs a:link,
+        #outputs a:visited,
+        #exhibit-child-pages a:link,
+        #exhibit-child-pages a:visited {
+            color: $autumn-dark-red;
+        }
+        .items-nav a:hover,
+        .items-nav a:active,
+        .secondary-nav a:hover,
+        .secondary-nav a:active,
+        #secondary-nav a:hover,
+        #secondary-nav a:active,
+        #outputs a:hover,
+        #outputs a:active,
+        #exhibit-child-pages a:hover,
+        #exhibit-child-pages a:active {
+            color: $autumn-red;
+        }
+        .item-img {
+            border-color: $winter-light-gray;
+        }
         div.hTagcloud {
             border: 0;
             background-color: transparent;
-            @include box-shadow(transparent 0 0 0);
+            -webkit-box-shadow: transparent 0 0 0;
+            -moz-box-shadow: transparent 0 0 0;
+            box-shadow: transparent 0 0 0;
         }
+
+        .highlight { background-color: $autumn-highlight; }
     }
 
-    #search-results th { background-color: $autumn-dark-beige; }
-
-    #search-filters, #item-filters {
-        li { background-color: #fff; }
-    }
-
-    .page #content { 
-        border-color: $autumn-dark-beige; 
-    }
-
-    footer {
+    #search-results th {
         background-color: $autumn-dark-red;
     }
-
+    #search-filters li,
+    #item-filters li {
+        background-color: $autumn-beige;
+    }
+    .page #content {
+        border-color: $autumn-dark-red;
+    }
+    footer {
+        margin-top: 0;
+        background-color: $autumn-dark-blue;
+    }
     footer p {
-        color:#fff;
+        color: #fff;
+    }
+    #wrap > footer:first-of-type {
+        border-top: 6px solid $autumn-dark-red;
     }
 
-    .exhibit-page-nav { background-color: $autumn-dark-red; }
+    .exhibits {
+        .exhibit-page-nav {
+            background-color: $autumn-dark-red;
+        }
+
+        h1 > span.exhibit-page { color: $autumn-light-brown; }
+        .exhibit-page-nav .current,
+        .exhibit-child-nav .current {
+            background-color: rgba(255, 255, 255, .25);
+        }
+        .exhibit-page-nav a:link,
+        .exhibit-page-nav a:visited {
+            color: $autumn-beige;
+        }
+        .exhibit-page-nav a:hover,
+        .exhibit-page-nav a:active {
+            color: #fff;
+        }
+        #exhibit-page-navigation a,
+        #exhibit-page-navigation span {
+            background-color: #fff;
+        }
+        .browse #secondary-nav,
+        #secondary-nav.browse {
+            background-color: $autumn-dark-red;
+            max-width: 75%;
+        }
+        .browse #secondary-nav li,
+        #secondary-nav.browse li {
+            margin-right: 0px;
+            padding: 0.5em;
+        }
+        .browse #secondary-nav li.active,
+        #secondary-nav.browse li.active {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+    }
+        .exhibit-page-nav { background-color: $autumn-dark-red; }
 
     .exhibit-page-nav .current, .exhibit-child-nav .current { background-color: rgba(0,0,0,.1); }
 
     .exhibit-page-nav {
-        a:link, a:visited { color: $autumn-dark-beige; }
-        a:hover, a:active { color: #fff; }
+        a:link, a:visited { color: $autumn-red; }
+        a:hover, a:active { color: $autumn-red; }
     }
     
     #exhibit-page-navigation {
         a, span { background-color: #fff; }
     }
-} 
+
+   .browse .disclaimer, .advanced-search .disclaimer {
+            font-size: 80%;
+            font-style: italic;
+            margin-top: -1em;
+        }
+
+
+    .exhibit-block span.break-row { border-color: $autumn-beige !important; }
+}
+
+
 
 
 /* !---------- Night Styles ---------- */

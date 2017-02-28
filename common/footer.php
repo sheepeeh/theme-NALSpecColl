@@ -19,7 +19,7 @@
                             <li><a href="https://www.nal.usda.gov" target="_blank">NAL Home</a></li>
                             <li><a href="http://www.usda.gov" target="_blank">USDA.gov</a></li>
                             <li><a href="http://www.ars.usda.gov" target="_blank">Agricultural Research Service</a></li>
-                            <li><a href="https://www.nal.usda.gov/web-policies-and-important-links" target-"_blank">Policies &amp; Links</a></li>
+                            <li><a href="https://www.nal.usda.gov/web-policies-and-important-links" target="_blank">Policies &amp; Links</a></li>
                             <li><a href="http://www.usda.gov/wps/portal/usda/usdahome?navid=PLAIN_WRITING" target="_blank">Plain Language</a></li>
                             <li><a href="http://www.ars.usda.gov/Services/docs.htm?docid=1398" target="_blank">FOIA</a></li>
                             <li><a href="http://www.usda.gov/wps/portal/usda/usdahome?navtype=FT&amp;navid=ACCESSIBILITY_STATEM" target="_blank">Accessibility Statement</a> </li>

@@ -36,12 +36,12 @@
 
 			<div id="secondary-files">
 
-				<?php if (metadata('item','item_type_id') == 6) {
+				<?php if (metadata('item','item_type_id') == 6 && metadata($files[1], 'MIME Type') != "application/pdf") {
 					echo file_markup($files, array('imageSize' => 'thumbnail', 'imgAttributes'=>array('alt'=>'Image (illustration or photograph) for this item, linking to higher res image.', 'title'=>metadata('item', array('Dublin Core', 'Title')))));
 				} else {
 					foreach($files as $file) {
 						echo "<div class=\"item-file\">";
-						echo "<a class==\"download-file\" href=\"" . $file->getWebPath('original') .  '" title="' . metadata('item', array('Dublin Core', 'Title')) . '" alt="View the full-size file.">'. file_image('thumbnail', array(alt => 'Thumbnail of an additional file for this item.'), $file) . "</a></div>";	
+						echo "<a class==\"download-file\" href=\"" . $file->getWebPath('original') .  '" title="' . metadata('item', array('Dublin Core', 'Title')) . '" alt="View the full-size file.">'. file_image('thumbnail', array(alt => 'Thumbnail of the first (or only) page of an additional file for this item.'), $file) . "</a></div>";	
 					}} ?>
 				</div>
 			<?php else: ?>

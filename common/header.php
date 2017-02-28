@@ -35,10 +35,12 @@
     <?php queue_js_file('jquery-extra-selectors'); ?>
     <?php queue_js_file('vendor/respond'); ?>
     <?php queue_js_file('globals'); ?>
-    <?php if ($_SERVER['SERVER_NAME'] == 'www.nal.usda.gov') {
-        queue_js_file('ga');
-        queue_js_url('//www.nal.usda.gov/sites/all/themes/gatag.js');
-    } ?>
+    <?php 
+
+        echo head_js();
+
+    ?>
+
 
 
 
@@ -47,7 +49,10 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap">
-        <a class="hidden" alt="Skip to content." href="#content">Skip to content.</a><!--Skip link for screen readers. -->
+        <!--Skip link for screen readers. -->
+        <p id="skip-link">
+            <a id="anch_0" href="#content" class="element-invisible element-focusable">Jump to Main Content</a>
+        </p>
         <header id="header-back">
             <!-- Begin NAL main header -->
                  <header class="header" id="header" role="banner">
@@ -73,17 +78,17 @@
                         </div>
 
                         <div class="header__name-and-slogan" id="name-and-slogan">
-                            <div>
-                                <h2 class="header__site-slogan" id="site-slogan">
-                                    <a href="/" title="United States Department of Agriculture"><span>United States Department of Agriculture</span></a>
-                                </h2>
-                            </div>  
 
-                          <div>
-                            <h1 class="header__site-name" id="site-name">
+                                <div class="header__site-slogan" id="site-slogan">
+                                    <a href="/" title="United States Department of Agriculture"><span>United States Department of Agriculture</span></a>
+                                </div>
+
+
+                          
+                            <div class="header__site-name" id="site-name">
                                 <a href="/" title="National Agricultural Library" class="header__site-link" rel="home"><span>National Agricultural Library</span></a>
-                            </h1>
-                        </div>
+                            </div>
+                        
 
                     </div><!-- /#name-and-slogan -->
         
@@ -105,7 +110,7 @@
                     <?php else: ?>
                     <?Php echo search_form(); ?>
                     <?php endif; ?>
-                </div>
+                </div>     
             </div>
 
 
@@ -113,10 +118,15 @@
         </header></header>
 
         <nav class="top">
-            <?php echo public_nav_main(); ?>
+            <?php echo public_nav_main(); ?>   
         </nav>
 
         <div id="content">
+            <?php if ( $alertText = get_theme_option('Alert Box Text') ): ?>
+                <div id="alert" style="background-color:#F0E442; color:#000; font-weight:800; text-align:center; width:50%; margin-left:25%; border-top:none;">
+                    <p><?php echo $alertText; ?></p>
+                </div>
+            <?php endif; ?>
             <?php
                 if(! is_current_url(WEB_ROOT)) {
                   fire_plugin_hook('public_content_top', array('view'=>$this));
